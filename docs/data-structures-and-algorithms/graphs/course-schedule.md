@@ -4,7 +4,7 @@ layout: home
 parent: Graphs
 ---
 
-### 🎯 Problem Description
+## Course Schedule
 
 There are a total of **`numCourses`** courses you have to take, labeled from **`0`** to **`numCourses - 1`**.
 
@@ -57,7 +57,7 @@ class Solution:
                 return False  
             if course_to_prereqs[course] == []:
                 return True
-                
+
             visiting_in_this_path.add(course)
 
             for prereq_course in course_to_prereqs[course]:
