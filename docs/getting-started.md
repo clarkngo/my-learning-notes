@@ -24,7 +24,7 @@ Welcome! This documentation is designed to help organize and structure learning 
 This documentation site includes:
 
 - **Search functionality** - Quickly find what you're looking for
-- **Responsive design** - Works on desktop and mobile devices  
+- **Responsive design** - Works on desktop and mobile devices
 - **Code highlighting** - Syntax highlighting for code examples
 - **Navigation** - Easy to navigate hierarchical structure
 
