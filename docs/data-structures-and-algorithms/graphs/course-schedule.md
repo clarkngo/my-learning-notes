@@ -40,7 +40,42 @@ Return **`true`** if you can finish all courses. Otherwise, return **`false`**.
 * `0 <= ai, bi < numCourses`
 * All the pairs `prerequisites[i]` are **unique**.
 
-### Solution
+## Solution
+
+```python
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        course_to_prereqs = {i: [] for i in range(numCourses)}
+
+        for course, prereq in prerequisites:
+            course_to_prereqs[course].append(prereq)
+
+        visiting_in_this_path = set()
+
+        def path_is_safe(course):
+            if course in visiting_in_this_path:
+                return False  
+            if course_to_prereqs[course] == []:
+                return True
+                
+            visiting_in_this_path.add(course)
+
+            for prereq_course in course_to_prereqs[course]:
+                if not path_is_safe(prereq_course):
+                    return False
+            visiting_in_this_path.remove(course)
+            course_to_prereqs[course] = []
+            
+            return True 
+            
+        for course_num in range(numCourses):
+            if not path_is_safe(course_num):
+                return False
+                
+        return True
+```
+
+## Code with Comments
 
 ```python
 class Solution:

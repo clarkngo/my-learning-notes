@@ -67,6 +67,36 @@ There are 4 nodes in the graph.
   * The graph is connected and all nodes can be visited starting from the given node.
 # Definition for a Node.
 
+## Solution
+```python
+class Node:
+    def __init__(self, val = 0, neighbors = None):
+        self.val = val
+        self.neighbors = neighbors if neighbors is not None else []
+
+from typing import Optional
+
+class Solution:
+    def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
+        old_to_new_map = {}
+
+        def dfs_clone(original_node: 'Node') -> 'Node':
+            if original_node in old_to_new_map:
+                return old_to_new_map[original_node]
+            cloned_node = Node(original_node.val)
+            old_to_new_map[original_node] = cloned_node
+            for neighbor in original_node.neighbors:
+                cloned_node.neighbors.append(dfs_clone(neighbor))
+            return cloned_node
+ 
+        if not node:
+            return None
+            
+        return dfs_clone(node)
+```
+
+## Code with Comments
+
 ```python
 class Node:
     def __init__(self, val = 0, neighbors = None):
