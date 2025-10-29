@@ -4,7 +4,45 @@ layout: home
 parent: Graphs
 ---
 
-```
+### 🎯 Problem Description
+
+There are a total of **`numCourses`** courses you have to take, labeled from **`0`** to **`numCourses - 1`**.
+
+You are given an array `prerequisites` where `prerequisites[i] = [ai, bi]` indicates that you must take course **`bi`** first if you want to take course **`ai`**.
+
+* For example, the pair `[0, 1]` indicates that to take course `0` you have to first take course `1`.
+
+Return **`true`** if you can finish all courses. Otherwise, return **`false`**.
+
+---
+
+### 📋 Examples
+
+**Example 1:**
+
+* **Input:** `numCourses = 2`, `prerequisites = [[1,0]]`
+* **Output:** `true`
+* **Explanation:** There are a total of 2 courses to take. To take course 1 you should have finished course 0. So it is possible.
+
+**Example 2:**
+
+* **Input:** `numCourses = 2`, `prerequisites = [[1,0],[0,1]]`
+* **Output:** `false`
+* **Explanation:** There are a total of 2 courses to take. To take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So it is impossible.
+
+---
+
+### ⛓️ Constraints
+
+* `1 <= numCourses <= 2000`
+* `0 <= prerequisites.length <= 5000`
+* `prerequisites[i].length == 2`
+* `0 <= ai, bi < numCourses`
+* All the pairs `prerequisites[i]` are **unique**.
+
+### Solution
+
+```python
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         
@@ -82,3 +120,178 @@ class Solution:
         # If we checked all courses and found no cycles, we can finish.
         return True
 ```
+
+Here's the breakdown of the time and space complexity.
+
+Let:
+
+  * **$N$** = `numCourses` (the number of **nodes** in the graph)
+  * **$P$** = `len(prerequisites)` (the number of **edges** in the graph)
+
+-----
+
+### ⏳ Time Complexity: $O(N + P)$
+
+This is the standard time complexity for a **Depth-First Search (DFS)** on a graph. Here's why:
+
+1.  **Building the Map ($O(P)$):**
+
+      * The code first iterates through the entire `prerequisites` list, which has $P$ items.
+      * For each item, it performs an $O(1)$ dictionary lookup and list append.
+      * **Cost: $O(P)$**
+
+2.  **The DFS (`path_is_safe`) ($O(N + P)$):**
+
+      * This is the main part. The code has a `for` loop that calls `path_is_safe` for every course from `0` to $N-1$.
+      * This *looks* like it might be $O(N \times \text{something})$, but it's not.
+      * The **key optimization** is this part:
+        ```python
+        # (Optimize): We've proven 'course' is safe.
+        course_to_prereqs[course] = [] 
+        ```
+      * Because of this line, the full `path_is_safe` function (with all its recursive checks) will run **at most once** for any given course.
+      * If `path_is_safe(C)` is called again as a prerequisite for another course (e.g., `path_is_safe(A)` checks `B`, which checks `C`), it will immediately hit the `if course_to_prereqs[course] == []:` base case and return `True` in $O(1)$ time.
+      * This means that across the *entire* execution, each node (course) and each edge (prerequisite) is visited **exactly one time**.
+      * Visiting every node is $O(N)$.
+      * Visiting every edge is $O(P)$.
+      * **Cost: $O(N + P)$**
+
+**Total Time:** $O(P) \text{ (map)} + O(N + P) \text{ (DFS)} = O(N + P)$
+
+-----
+
+### 💾 Space Complexity: $O(N + P)$
+
+The space is determined by the data structures we build and the recursion call stack.
+
+1.  **The Prerequisite Map ($O(N + P)$):**
+
+      * `course_to_prereqs` stores one key for every course ($N$).
+      * It also stores a value for every prerequisite ($P$) distributed across the lists.
+      * **Cost: $O(N + P)$**
+
+2.  **The Recursion Call Stack ($O(N)$):**
+
+      * The `path_is_safe` function calls itself. In the worst-case scenario, the prerequisites form one long chain (e.g., $Course 0 \rightarrow 1 \rightarrow 2 \rightarrow ... \rightarrow N-1$).
+      * This would cause the recursion to go $N$ levels deep, placing $N$ function calls on the stack.
+      * **Cost: $O(N)$**
+
+3.  **The `visiting_in_this_path` Set ($O(N)$):**
+
+      * This set stores the nodes in the *current* path.
+      * Its size is directly limited by the recursion depth. In that same worst-case long chain, the set would grow to hold $N$ items before backtracking.
+      * **Cost: $O(N)$**
+
+**Total Space:** $O(N + P) \text{ (map)} + O(N) \text{ (stack)} + O(N) \text{ (set)} = O(N + P)$
+
+This solution uses a **Depth-First Search (DFS)** algorithm to solve the problem.
+
+The entire problem boils down to one question: **"Is there a cycle in the course dependencies?"**
+
+  * If there is **no cycle** (like `Course A` needs `B`, and `B` needs `C`), you **can** finish.
+  * If there is a **cycle** (like `A` needs `B`, and `B` needs `A`), you **cannot** finish.
+
+This code is a "cycle detector" for a directed graph.
+
+-----
+
+### 1\. The Core Idea: The Task List
+
+Imagine you have a main task, like "Take Course 0".
+
+1.  You look at your `course_to_prereqs` map: `0: [1, 2]`.
+2.  To do Task 0, you must first do "Task 1" and "Task 2".
+3.  You pause Task 0 and start "Task 1".
+4.  You look at its list: `1: [3]`.
+5.  You pause Task 1 and start "Task 3".
+6.  You look at its list: `3: []`. It has no prerequisites. Task 3 is "safe." You complete it.
+7.  You go back to Task 1. Since Task 3 is done, Task 1 is also "safe."
+8.  You go back to Task 0. You still need to do "Task 2"... and so on.
+
+**When does this fail?**
+Imagine you're doing "Task A". It needs "Task B". You start "Task B". It needs "Task C". You start "Task C". It needs "Task A".
+
+You are now trying to start "Task A", but you're **already in the middle of doing "Task A"** (you paused it to do B and C). This is a cycle, and it's impossible.
+
+-----
+
+### 2\. How the Code Implements This
+
+#### **Step 1: Build the Map**
+
+```python
+course_to_prereqs = {i: [] for i in range(numCourses)}
+for course, prereq in prerequisites:
+    course_to_prereqs[course].append(prereq)
+```
+
+This just builds the "task list." It creates a map where each course points to its list of immediate prerequisites.
+
+#### **Step 2: The "Current Path" Tracker**
+
+```python
+visiting_in_this_path = set()
+```
+
+This is the **most important part**. This set tracks the "tasks" (courses) we are *currently* in the middle of. In our analogy, it's the list of paused tasks: `{"Task A", "Task B", "Task C"}`.
+
+It is **NOT** a set of all courses we've ever visited. It's *only* the ones in the current recursive chain.
+
+#### **Step 3: The `path_is_safe(course)` Function**
+
+This function (which was `dfs`) answers the question: "Can I complete this `course` and all its prerequisites without getting stuck in a loop?"
+
+Let's trace its logic:
+
+1.  ```python
+    if course in visiting_in_this_path:
+        return False  # CYCLE!
+    ```
+
+      * **Translation:** "I'm being asked to start this `course`, but I'm *already* in the middle of processing it." This is the cycle (like `A -> B -> A`). It's impossible.
+
+2.  ```python
+    if course_to_prereqs[course] == []:
+        return True  # SAFE!
+    ```
+
+      * **Translation:** "This `course` has no prerequisites." It's a "base case" course (like "Course 101"). It's safe. (This also acts as an optimization, which we'll see in a second).
+
+3.  ```python
+    visiting_in_this_path.add(course)
+    ```
+
+      * **Translation:** "Okay, this course isn't a cycle *yet* and isn't a base case. Let's start processing it. Add it to our 'currently visiting' list."
+
+4.  ```python
+    for prereq_course in course_to_prereqs[course]:
+        if not path_is_safe(prereq_course):
+            return False
+    ```
+
+      * **Translation:** "Go through every prerequisite for this `course`. Recursively check if *that* path is safe. If any of my prerequisites (`prereq_course`) reports back `False` (meaning *it* found a cycle), then I'm also impossible. Stop and report `False`."
+
+5.  ```python
+    visiting_in_this_path.remove(course)
+    course_to_prereqs[course] = []
+    return True
+    ```
+
+      * **Translation:** "If my `for` loop finished, it means all my prerequisites (and *their* prerequisites, etc.) are safe. This `course` is officially 100% possible to take."
+      * **`visiting_in_this_path.remove(course)`:** (This is "backtracking"). We are *done* checking this path. We remove it from the "currently visiting" set so that *other* courses can use it as a prerequisite without causing a false alarm.
+      * **`course_to_prereqs[course] = []`:** (This is an **optimization**). We've proven this `course` is safe. We clear its prerequisite list. Now, if any *other* course check needs this `course`, it will hit Step 2 (`if course_to_prereqs[course] == []`) and immediately return `True` without re-doing all the work.
+
+#### **Step 4: The Main Loop**
+
+```python
+for course_num in range(numCourses):
+    if not path_is_safe(course_num):
+        return False
+return True
+```
+
+You might wonder, "Why check *every* course?"
+
+This is to catch **disconnected graphs**. You might have one set of safe courses (like `0 -> 1 -> 2`) and a completely separate set of *unsafe* courses (`3 -> 4 -> 5 -> 3`).
+
+If you only checked `path_is_safe(0)`, you'd get `True` and miss the cycle in the other group. This loop ensures you check every single course as a potential starting point for a cycle. If any of them find a cycle, the whole system is impossible.
