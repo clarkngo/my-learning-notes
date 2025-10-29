@@ -2,6 +2,7 @@
 layout: default
 title: Contributing
 nav_order: 3
+parent: Just The Docs
 ---
 
 # Contributing
