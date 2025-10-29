@@ -1,33 +1,8 @@
-# Just the Docs configuration
 title: My Learning Notes
-description: A collection of learning notes and documentation
-remote_theme: just-the-docs/just-the-docs
+description: A collection of my personal learning notes and resources.
+theme: just-the-docs
 
-# Color scheme supports "light" (default) and "dark"
-color_scheme: light
+url: https://just-the-docs.github.io
 
-# Enable search
-search_enabled: true
-search:
-  heading_level: 2
-  previews: 3
-  preview_words_before: 5
-  preview_words_after: 10
-  tokenizer_separator: /[\s/]+/
-  rel_url: true
-  button: false
-
-# Aux links for the upper right navigation
 aux_links:
-  "My Learning Notes on GitHub":
-    - "//github.com/clarkngo/my-learning-notes"
-
-# Footer content
-footer_content: "Copyright &copy; 2025. Distributed by an <a href=\"https://github.com/clarkngo/my-learning-notes/tree/main/LICENSE\">MIT license.</a>"
-
-# Back to top link
-back_to_top: true
-back_to_top_text: "Back to top"
-
-# Enable or disable heading anchors
-heading_anchors: true
+  Template Repository: https://github.com/just-the-docs/just-the-docs-template
