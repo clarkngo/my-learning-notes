@@ -1,11 +1,8 @@
 ---
-title: Threat Model Library
+title: Threat Model
 layout: default
-parent: OWASP
 ---
 
-{: .no_toc }
-
-[OWASP Threat Model Library](https://owasp.org/www-project-threat-model-library/)
+Build Threat Models using
 - [OWASP Threat Dragon](https://owasp.org/www-project-threat-dragon/)
 - [OWASP Threat pytm](https://github.com/OWASP/pytm)

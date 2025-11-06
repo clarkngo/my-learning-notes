@@ -1,4 +1,4 @@
 ---
 title: Career Journal
-layout: home
+layout: default
 ---

@@ -1,5 +1,5 @@
 ---
 title: Graphs
-layout: home
+layout: default
 parent: Data Structures and Algorithms
 ---

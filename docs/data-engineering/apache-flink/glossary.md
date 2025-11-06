@@ -1,6 +1,6 @@
 ---
 title: Glossary
-layout: home
+layout: default
 parent: Apache Flink
 ---
 

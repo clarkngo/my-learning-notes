@@ -1,5 +1,5 @@
 ---
 title: OWASP
-layout: home
+layout: default
 ---
 

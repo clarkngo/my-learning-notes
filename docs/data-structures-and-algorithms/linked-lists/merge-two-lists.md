@@ -1,6 +1,6 @@
 ---
 title: Merge Two Sorted Linked Lists
-layout: home
+layout: default
 parent: Linked Lists
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Full Stack vs Agentic Stack
-layout: home
+layout: default
 parent: Agent Engineering
 ---
 

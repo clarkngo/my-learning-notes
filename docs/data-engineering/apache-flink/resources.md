@@ -1,6 +1,6 @@
 ---
 title: Resources
-layout: home
+layout: default
 parent: Apache Flink
 ---
 

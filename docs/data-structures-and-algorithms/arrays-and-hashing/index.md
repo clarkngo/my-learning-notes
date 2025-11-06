@@ -1,6 +1,6 @@
 ---
 title: Arrays and Hashing
-layout: home
+layout: default
 parent: Data Structures and Algorithms
 ---
 

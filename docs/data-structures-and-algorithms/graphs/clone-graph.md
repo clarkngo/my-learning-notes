@@ -1,6 +1,6 @@
 ---
 title: Clone Graph
-layout: home
+layout: default
 parent: Graphs
 ---
 

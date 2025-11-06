@@ -1,6 +1,6 @@
 ---
 title: Course Schedule
-layout: home
+layout: default
 parent: Graphs
 ---
 

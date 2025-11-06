@@ -1,4 +1,4 @@
 ---
 title: Data Engineering
-layout: home
+layout: default
 ---

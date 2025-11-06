@@ -1,6 +1,6 @@
 ---
 title: Reverse Linked List
-layout: home
+layout: default
 parent: Linked Lists
 ---
 

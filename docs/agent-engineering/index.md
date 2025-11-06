@@ -1,6 +1,6 @@
 ---
 title: Agent Engineering
-layout: home
+layout: default
 has_toc: false
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Just The Docs
-layout: home
+layout: default
 parent: References
 ---
 

@@ -1,5 +1,5 @@
 ---
 title: Ebay
-layout: home
+layout: default
 parent: Career Journal
 ---

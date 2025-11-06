@@ -1,6 +1,6 @@
 ---
 title: Movie Multi Agent A2A MCP
-layout: home
+layout: default
 parent: Agent Engineering
 ---
 

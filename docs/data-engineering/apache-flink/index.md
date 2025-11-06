@@ -1,6 +1,6 @@
 ---
 title: Apache Flink
-layout: home
+layout: default
 parent: Data Engineering
 ---
 

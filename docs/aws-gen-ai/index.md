@@ -1,6 +1,6 @@
 ---
 title: AWS Certified AI Practitioner  
-layout: home
+layout: default
 ---
 
 ## AWS Certified AI Practitioner (AIF-C01) Study Notes

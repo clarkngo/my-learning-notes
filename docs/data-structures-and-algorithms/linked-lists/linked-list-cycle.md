@@ -1,6 +1,6 @@
 ---
 title: Linked List Cycle
-layout: home
+layout: default
 parent: Linked Lists
 ---
 
