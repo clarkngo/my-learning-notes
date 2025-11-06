@@ -85,6 +85,8 @@ Assuming [Jekyll] and [Bundler] are installed on your computer:
 
     The built site is stored in the directory `_site`.
 
+`bundle exec jekyll serve --livereload`
+
 ## Publishing your built site on a different platform
 
 Just upload all the files in the directory `_site`.
