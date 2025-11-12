@@ -1,8 +1,8 @@
 ---
-title: Demo
+title: Google ADK Security Analysis
 layout: default
-parent: Threat Model
 ---
+
 
 # In-Page Navigation
 {: .no_toc }
