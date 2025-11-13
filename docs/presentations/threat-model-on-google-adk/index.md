@@ -15,7 +15,7 @@ parent: Presentations
 
 
 # Threat Model on Google ADK Agents: An OWASP Agentic Security Initiative
-## [View the PDF version of the presentation](assets/files/threat-model-on-google-adk-agents.pdf)
+## [View the PDF version of the presentation](https://github.com/clarkngo/my-learning-notes/blob/main/assets/files/threat-model-on-google-adk-agents.pdf)
 ## [Watch this presentation on YouTube](https://www.youtube.com/watch?v=5Ym5lDwI-N4)
 
 
