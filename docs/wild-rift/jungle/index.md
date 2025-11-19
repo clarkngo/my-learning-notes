@@ -14,12 +14,53 @@ parent: Wild Rift
 {:toc}
 
 # Personal Notes
+
+## Clark
 Early vision: 
 - To see if enemy would counter jungle (let's say your start on blue): 
   - drop a ward to a your red buff 
   - recall
   - change ward to sweeping
   - go start farming your blue buff.
+
+
+## Jason
+
+## ⚔️ Essential Jungle Notes ⚔️
+
+### I. ⏱️ Early Game & Clear Timing
+
+* **First Full Clear:** Aim for **1:20-1:30**.
+    * *Purpose:* This speed gives you time for high-impact early map actions (e.g., early gank, deep warding to track the enemy Jungler, securing Scuttle Crab).
+
+### II. 🐉 Objective Control
+
+* **Priority Objectives (Drake / Herald):**
+    * **If Winning:** You have the flexibility to choose based on your win condition (team-fighting vs. split-pushing).
+    * **If Losing/Even:** Generally, go for the **opposite objective** of the enemy Jungler's known position.
+    * *Personal Preference:* **Herald** is often preferred for early gold and securing the **Mid Tower**, which greatly *opens up the map*.
+* **Baron Nashor:**
+    * Understand when your champion (solo or duo with a laner) can reliably take it.
+    * **Crucial:** Practice timing how many seconds it takes you to kill it with your required item build/spike.
+
+### III. ✨ Mechanics & Timing
+
+* **Smite Combo Mastery:** Always use your **highest burst damage ability** (e.g., an ultimate or powerful basic ability) **+ Smite** simultaneously to reliably secure objectives (Dragons, Baron, Epic Monsters).
+    * *Action Item:* **Practice this consistently** on Blue Buff and Red Buff until it becomes automatic.
+* **Base-to-Objective Timing:** **Know the travel time** from your base to major objectives (Drake/Baron).
+    * *Use:* This knowledge helps you decide if you can **recall for an item spike** before a fight, or if you can arrive in time to **attempt a steal**.
+
+### IV. 💰 Itemization & Backing
+
+* **Optimal Back Timings:**
+    * You should primarily back when you hit a significant **Item Spike** or can afford a **Full Major Item**.
+    * *Rule of Thumb:* If you're heading back, it should be to acquire an item that noticeably increases your power, making **you the reason** for the successful back.
+
+### V. 🚨 Mid-to-Late Game Safety
+
+* **The Cardinal Rule:** **Never get caught out** immediately before a major objective (Baron, Elder Dragon) spawns.
+    * *Impact:* In high-elo games, losing your Jungler just before an objective often **decides the game**.
+
 
 # Jungle Timers
 This section is extracted from [talanwr](https://www.youtube.com/@talanwr)'s YouTube video: [A rank 1 Player Explains Jungle Timers
