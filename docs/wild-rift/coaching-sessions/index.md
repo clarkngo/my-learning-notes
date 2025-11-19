@@ -12,7 +12,7 @@ parent: Wild Rift
 1. TOC
 {:toc}
 
-# Coaching on Brand Support
+# Coaching on Brand Support 11-19-2025
 
 Better **wave control** and **map awareness** significantly enhance a support's effectiveness by influencing macro play, enabling optimal gold and experience distribution, and creating opportunities for favorable trades and objective control.
 
@@ -83,3 +83,34 @@ Based on the coaching session, there are several additional specific points rega
 **Analogy for Champion Mastery:**
 
 Think of mastering Brand like learning to play a musical instrument: you must first dedicate yourself to mastering the basic scales, chords, and techniques (your micro and Brand's specific capabilities/combos) until they become muscle memory. Only once those fundamentals are automatic can you effectively focus on composing complex music (macro strategy and reading the enemy team) without fumbling the basics.
+
+# Coaching on Jungler 11-19-2025
+
+The sources provide extensive advice for junglers, focusing on champion mastery, optimal clear speed, strategic pathing, and how to manage invasions and coordinate ganks.
+
+Here are detailed tips for improving effectiveness in the jungle role:
+
+### I. Micro Play: Champion Mastery and Clear Speed
+
+1.  **Champion Focus (Micro):** You should **stick to one or two champions at most** to deeply understand their play style and abilities. This focus allows mechanics, clearing, and optimal ability usage to become ingrained, functioning as **muscle memory**.
+2.  **Optimizing Clear Speed:** High-level players can clear the jungle in about **1 minute 30 seconds**, while the jungler discussed often clears around the 2-minute mark or 1 minute 50 seconds.
+    *   Practice in the practice tool (not PvP) to master clear mechanics, focusing on **pulling camps** and using abilities in the most optimal way.
+    *   Learn how to hit **multiple creeps** simultaneously in multi-unit camps to reduce time. Every second saved multiplies and improves your overall tempo.
+3.  **Knowing Your Champion Type:** Understand whether your champion is designed for **early, mid, or late game** play, and whether you need to **power farm** or can make gains early on. Champions like **Shyvana** and **Nocturne** are favorable because they are not reliant on teammates and can carry late game. However, they are also prone to easy counter-jungling in the early game.
+
+### II. Macro Play: Pathing, Invasions, and Counter-Play
+
+1.  **Consistent Pathing:** Try to path in a **consistent line**. For instance, if you suspect an early game champion (like Lee Sin) might invade your blue, you could path from your Red buff to your top lane, then to Blue, then to Scuttle, and then back to your Raptors, following a continuous pattern.
+2.  **Tracking Enemy Location:** It is **really important to track where the enemy jungler's ping will be**. Knowing their general location helps you make counter plays.
+3.  **Managing Invasions:** If the enemy jungler invades and your teammates cannot defend, **do not die trying to protect a camp**.
+    *   If you lose a camp (e.g., your blue buff), you are **better off counter-invading** the enemy’s opposite side (e.g., taking their red) to make up for lost gold and experience. You can then proceed to the Scuttle.
+    *   When dealing with high-level invades (like a flash/smite steal), **Control Warding (pink warding)** your buff first can help prevent the play.
+    *   Enemy invades mess up their tempo, allowing you to plan a **counter-gank** or counter-invade elsewhere.
+4.  **Engage and Disengage:** Be careful of high-engage champions like **Rammus** (Ramos) where teammates may not follow up. The jungler needs to be clear about **when to engage and when to back off**. Communicate the intention of the engage (e.g., is it an all-in fight, or just meant to "mess around").
+
+### III. Ganking and Team Communication
+
+1.  **Laners Must Set Up Ganks:** Laners must assist the jungler in setting up opportunities. If your jungler is waiting for a gank, **do not shove the minion wave all the way to the enemy tower**, as this makes it difficult for the jungler to reach the enemy.
+2.  **Show Presence:** Sometimes just **showing up** or making a brief appearance ("peekaboo") is helpful, even without a kill, as burning enemy summoner spells (like Flash) aids your teammates.
+3.  **Pinging and Follow-Up:** Use pings before attempting a gank. If you go for a gank and the laner clearly fails to follow up on an easy kill, it is a **waste of time** to gank that lane again.
+4.  **Maintain Confidence:** The jungler’s tempo can be easily disrupted by teammates making poor gank requests. Stay confident and stick to your established jungle flow.
