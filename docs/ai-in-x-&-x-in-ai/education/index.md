@@ -1,7 +1,7 @@
 ---
 title: Education
 layout: default
-parent: AI in X
+parent: AI in X & X in AI
 ---
 
 # In-Page Navigation

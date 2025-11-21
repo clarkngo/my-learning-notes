@@ -1,7 +1,7 @@
 ---
 title: Introductory Programming
 layout: default
-parent: AI in X & AI in X
+parent: AI in X & X in AI
 ---
 
 # In-Page Navigation
