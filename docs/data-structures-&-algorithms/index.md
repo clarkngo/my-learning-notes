@@ -1,5 +1,5 @@
 ---
-title: Data Structures and Algorithms
+title: Data Structures & Algorithms
 layout: default
 ---
 
