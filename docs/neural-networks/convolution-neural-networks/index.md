@@ -51,3 +51,89 @@ The CEO sits at the top. They receive the final report from the Directors.
 2.  **One-Way Flow:** The CEO never runs down to the basement to ask an intern, "Are you sure that line was curved?" The information only flows upward.
 3.  **Localized Vision:** The interns (Convolution Filters) only see a tiny piece of the world. It takes the hierarchy to understand the big picture.
 
+# AI-Unplugged for CNN: Limited Vision (Receptive Fields) and Hierarchical Construction
+
+This is a classic "Unplugged" activity often used to teach Computer Science concepts. We will call this game **"The pixel Assembly Line."**
+
+It gamifies the specific constraints of a CNN: **Limited Vision (Receptive Fields)** and **Hierarchical Construction.**
+
+### Game Title: The Pixel Assembly Line
+
+**Objective:** The team must identify a mystery image, but no one person is allowed to see the whole image. They must rely on the "Feed Forward" process.
+
+**Players:** 6–10 people (Scalable).
+**Materials:**
+* 1 Large printout of a simple object (e.g., a House, a Smiley Face, a Car, or a Cat).
+* 1 large piece of opaque paper (to cover the printout) with a 3x3 grid cut out of it (or just cut the original image into 9 squares).
+* Small index cards or sticky notes.
+* Pens/Markers.
+
+---
+
+### The Setup (The Hierarchy)
+Arrange your players in three distinct rows (Layers).
+
+**Row 1: The Scanners (The Filters)**
+* **Number of Players:** 3-4 (Assign each player specific "grid squares" of the image).
+* **Constraint:** They are **only** allowed to see their specific square. They cannot look at their neighbor's square.
+* **Job:** They look at the pixels and draw the *lines* they see on an index card.
+* **Strict Rule:** They cannot name shapes. They can only draw lines (vertical, horizontal, diagonal, curved).
+
+**Row 2: The Builders (The Feature Map)**
+* **Number of Players:** 2-3.
+* **Constraint:** They cannot see the original image *at all*. They can only look at the index cards passed to them by Row 1.
+* **Job:** They take the index cards from Row 1, tape them together, and try to identify a **Shape** or **Part**.
+* **Strict Rule:** They interpret the lines. They write down "I see a Triangle," "I see a Circle," or "I see Whiskers."
+
+**Row 3: The AI (The Output Layer)**
+* **Number of Players:** 1.
+* **Constraint:** Can only read the words written by Row 2.
+* **Job:** Guess the object.
+
+---
+
+### The Gameplay (The Feed Forward)
+
+**Round 1: The Input**
+The Facilitator (You) walks to **Row 1**. You show Player A *only* the top-left corner of the mystery image (e.g., the point of a roof).
+* *Player A thinks:* "I see two diagonal lines meeting."
+* *Action:* Player A draws an inverted 'V' on a card and passes it to Row 2.
+
+You show Player B the middle square (e.g., a window).
+* *Player B thinks:* "I see four perpendicular lines."
+* *Action:* Player B draws a hashtag/square shape and passes it to Row 2.
+
+**Round 2: The Feature Extraction**
+**Row 2** receives these cards. They don't know where they came from contextually, but they analyze the pattern.
+* *Builder 1 says:* "Okay, I have a pointy angle here. That looks like a **Triangle**." (Writes "Triangle" on a card).
+* *Builder 2 says:* "I have a box shape with a cross. That looks like a **Square** or a **Window**." (Writes "Square/Window" on a card).
+* *Action:* They pass these text cards to Row 3.
+
+**Round 3: The Classification**
+**Row 3 (The AI)** receives the cards: "Triangle" and "Square/Window."
+* *The AI thinks:* "What object has a triangle on top of a square?"
+* *Action:* The AI shouts: **"It's a House!"**
+
+---
+
+### The Educational Debrief (The "Why")
+
+After the game (whether they win or lose), gather everyone and explain the parallels:
+
+1.  **To Row 1 (The Scanners):** "Did you know you were drawing a house?"
+    * *They will say No.*
+    * **Lesson:** This is the **Convolutional Layer**. It doesn't understand objects; it only understands edges and contrast. It has a small 'Receptive Field.'
+
+2.  **To Row 2 (The Builders):** "Could you have guessed it was a house without Row 1?"
+    * *They will say No.*
+    * **Lesson:** This is the **Hidden Layer**. It aggregates simple features into complex shapes. It needs the data from the previous layer to function.
+
+3.  **To Row 3 (The AI):** "Why didn't you just look at the drawing?"
+    * **Lesson:** Computers can't "see." They only process math and probability. You represented the **Fully Connected Layer** that takes high-level data and assigns a label.
+
+4.  **Failure Mode (Optional):** If the game fails (e.g., they guess "Arrow" instead of "House"), explain that this is **Loss**. In a real AI, we would send a signal back (Backpropagation) telling Row 2 and Row 1 to adjust how they interpret the lines next time.
+
+### Visual Aid for the Room
+Draw this on the whiteboard to track progress:
+
+`[ Pixels ] --> [ Lines ] --> [ Shapes ] --> [ Object ]`
