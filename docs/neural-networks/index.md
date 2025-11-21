@@ -67,3 +67,91 @@ layout: default
 #### **Underfitting**
 * **Definition:** The model is too simple to capture the pattern.
 * **Symptom:** Poor accuracy on both training and test data. (The student didn't study enough or the subject is too hard).
+
+## Number of Neurons for Layers
+Deciding the number of neurons for a `Dense` layer in Keras is a mix of strict rules (for inputs/outputs) and experimentation (for hidden layers).
+
+There is no single formula that gives the perfect number, but there is a standard process to find it.
+
+### 1\. The "Fixed" Layers (No Choice)
+
+For your first and last layers, the number of neurons is determined strictly by your data.
+
+  * **Input Layer:** Must match the number of input features (columns) in your data.
+      * *Example:* If your input is a spreadsheet with 10 columns (price, age, size, etc.), your input shape effectively expects **10** neurons.
+  * **Output Layer:** Determined by what you are predicting.
+      * **Regression (predicting a number):** 1 neuron (e.g., predicting house price).
+      * **Binary Classification (Yes/No):** 1 neuron (with `sigmoid` activation).
+      * **Multi-class Classification:** N neurons, where N is the number of classes (e.g., 10 neurons for identifying digits 0-9, with `softmax` activation).
+
+-----
+
+### 2\. The Hidden Layers (The "Art")
+
+For the layers in the middle, you have to choose. Here are the three most common strategies, ranked from simplest to most advanced.
+
+#### Strategy A: The "Funnel" (Most Common)
+
+Many successful architectures follow a funnel shape, where the layers get smaller as they get deeper. The logic is that the network condenses information into higher-level features.
+
+  * **Rule of Thumb:** Start with a size between your input and output size, and reduce it by half for each subsequent layer.
+  * **Common Values:** Use powers of 2 because they align well with GPU memory (32, 64, 128, 256, 512).
+
+> **Example:**
+> Input (100 features) $\to$ Dense(64) $\to$ Dense(32) $\to$ Output(1)
+
+#### Strategy B: The "Stretch Pants" Approach
+
+If you aren't sure, it is better to make the layer **too big** than too small. A network that is slightly too large can still learn, but a network that is too small will never capture the complexity of the data (underfitting).
+
+1.  Make the layer large (e.g., 512 neurons).
+2.  Add a `Dropout` layer immediately after it to prevent overfitting.
+
+<!-- end list -->
+
+```python
+model.add(layers.Dense(512, activation='relu'))
+model.add(layers.Dropout(0.5)) # Kills 50% of neurons randomly during training
+```
+
+#### Strategy C: The "Mean" Heuristic
+
+A simple starting point for a single hidden layer is to find the average size.
+
+**The Rule:**
+Add the number of input neurons to the number of output neurons, then divide the total by 2.
+
+**Example:** If you have **10** inputs and **2** outputs, you would do (10 + 2) / 2 = **6** hidden neurons.
+-----
+
+### 3\. The "Scientific" Way (Keras Tuner)
+
+Instead of guessing, you can write code to let Keras find the optimal number for you. This is called Hyperparameter Tuning.
+
+You can use **Keras Tuner** to test a range of values (e.g., "try every value between 32 and 512") and report back which one resulted in the highest accuracy.
+
+```python
+import keras_tuner as kt
+
+def build_model(hp):
+    model = keras.Sequential()
+    # Tune the number of units in the first Dense layer
+    # Choose an optimal value between 32-512
+    hp_units = hp.Int('units', min_value=32, max_value=512, step=32)
+    
+    model.add(layers.Dense(units=hp_units, activation='relu'))
+    model.add(layers.Dense(10)) # Output layer
+    model.compile(optimizer='adam', loss='mse')
+    return model
+
+tuner = kt.Hyperband(build_model, objective='val_loss', max_epochs=10)
+tuner.search(x_train, y_train, validation_data=(x_val, y_val))
+```
+
+### Summary Checklist
+
+| Layer Type | Neuron Count Rule |
+| :--- | :--- |
+| **Input** | Equal to number of features (columns). |
+| **Hidden** | Start with **32**, **64**, or **128**. Try to keep it between Input and Output sizes. |
+| **Output** | 1 (for regression/binary) OR Number of Classes (for multi-class). |
