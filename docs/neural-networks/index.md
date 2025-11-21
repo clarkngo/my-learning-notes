@@ -155,3 +155,33 @@ tuner.search(x_train, y_train, validation_data=(x_val, y_val))
 | **Input** | Equal to number of features (columns). |
 | **Hidden** | Start with **32**, **64**, or **128**. Try to keep it between Input and Output sizes. |
 | **Output** | 1 (for regression/binary) OR Number of Classes (for multi-class). |
+
+
+## Why We Exclude Optimizer During Evaluation
+Here is a summary of why we exclude the optimizer during evaluation, explained using general concepts rather than specific code.
+
+### The Core Concept: Learning vs. Performing
+
+
+The most helpful way to think about this is the difference between **studying** and **taking a test**.
+
+* **The Optimizer is the "Study Method."** Its only job is to look at mistakes and update the brain (the weights) to fix them.
+* **Evaluation is the "Final Exam."** Its only job is to measure how much knowledge the model currently has.
+
+
+Here are the three specific reasons why we turn the optimizer off during the exam:
+
+### 1. To Maintain Test Integrity (No Cheating)
+If you keep the optimizer on during evaluation, the model will update its internal weights based on the test questions.
+* **The Risk:** The model will "memorize" the answers to the test data instead of using the general rules it learned.
+* **The Result:** Your accuracy score will be artificially high, but the model will fail when used in the real world because it didn't actually learn; it just cheated on the test.
+
+### 2. To Save Resources (Efficiency)
+"Learning" is mathematically expensive; "Answering" is cheap.
+* **With Optimizer (Training):** The computer must calculate the answer **AND** track the history of every calculation to figure out how to go back and fix errors (Backpropagation). This requires massive amounts of memory and processing power.
+* **Without Optimizer (Evaluation):** The computer only needs to calculate the answer moving forward. It doesn't need to remember the history or calculate adjustments. This is much faster and uses significantly less memory.
+
+### 3. To Switch "Modes"
+Neural networks often behave differently when they are practicing versus when they are working.
+* **Practice Mode:** Some techniques (like randomly turning off neurons) are used to make the training harder so the model becomes robust.
+* **Real-World Mode:** When evaluating, we want to turn those handicaps off to see the model's full, unrestricted potential. Disabling the training logic ensures the model runs in this "Real-World" state.
