@@ -54,6 +54,66 @@ For a small, achievable win in the next two weeks, her goal is to successfully *
 
 In summary, the mentee's overall goal is to secure a mentorship connection with a **defined, intentional purpose** (an output-based goal) to satisfy a **corporate requirement (year-end goal)** while simultaneously working toward becoming a **more proficient Lead Data Analyst** by addressing her self-identified **technical skills gaps**.
 
+# Strategies for Mentee
+
+This is a multi-layered mentorship challenge. Justine needs **bureaucratic validation** (for the year-end goal), **technical troubleshooting** (for the immediate win), and **strategic guidance** (for the IC career path).
+
+Here are curated resources and strategies categorized by her specific goals to help you guide her effectively.
+
+---
+
+### 1. For the "Year-End Goal" (Formalizing the Mentorship)
+**Objective:** Create an artifact that proves the mentorship exists, is "intentional," and helps her performance review.
+
+* **The "Mentorship Agreement" Template:**
+    * Don't just talk; write it down. Use a template to define the cadence, goals, and success metrics.
+    * *Resource:* **The "Grow" Model Worksheet.** (Goal, Reality, Options, Will).
+    * *Action:* Spend the first 15 minutes of your next session filling out a simple one-page document she can attach to her Year-End Review. It should explicitly state: "Goal: Up-level technical proficiency in Power Platform to transition to Lead Analyst."
+* **The "Brag Document" (for Performance Reviews):**
+    * Justine feels "incomplete" and competitive. She needs to track her wins.
+    * *Resource:* **Julia Evans’ "Brag Document" Guide.** This is a famous tech industry resource on how to write a document that tracks your work so performance reviews are easier.
+    * *Why it helps:* It turns her anxiety about the year-end review into a structured log of accomplishments.
+
+### 2. For the "Senior IC" Career Path
+**Objective:** Show her what a "Lead Data Analyst" looks like without managing people.
+
+* **Career Ladders / Competency Matrices:**
+    * She needs to see the difference between a "Doer" (Mid-level) and a "Leader" (Senior/Lead).
+    * *Resource:* **Monzo’s Data Glossary & Progression Framework** or **Spotify’s Public Tech Career Steps**. (Search for "Public Data Science Career Ladders").
+    * *Key Concept:* Show her that "Lead" ICs usually focus on *ambiguity* and *system design*, not just writing faster SQL.
+* **Book/Reading Recommendation:**
+    * *Resource:* **"The Staff Engineer's Path" by Tanya Reilly.**
+    * *Why it helps:* Even though she is an Analyst, this book is the gold standard for the "Individual Contributor" track. It explains how to have influence and technical leadership without being a manager.
+
+### 3. For Technical Upskilling (Power SQL & Automate)
+**Objective:** Address the "technical gaps" and bug-fixing anxiety.
+
+* **Microsoft Learn (Official Paths):**
+    * *Resource:* **Microsoft Learn: "Master DAX and SQL in Power BI"** or **"Automate processes with Power Automate."**
+    * *Strategy:* Don't just send her a link. Pick *one* specific module relevant to her current bugs and ask her to complete it before the next session.
+* **YouTube Resource:**
+    * *Resource:* **"Guy in a Cube" (YouTube Channel).**
+    * *Why it helps:* This is the industry standard for Power BI/Power Platform tutorials. They are short, practical, and often cover specific edge cases (like refresh failures).
+
+### 4. For the "Two-Week Win" (Data Flow Refresh Project)
+**Objective:** Help her pull data flow refresh history into a report immediately.
+
+* **The Technical Solution (Cheat Sheet):**
+    * To help her get this quick win, point her toward the **Power BI REST API** or the **Power Automate "Get Run History"** action.
+    * *Resource:* Look for tutorials specifically on **"Power BI REST API Get Refresh History"**.
+    * *Specific Workflow to suggest:*
+        1.  Use Power Automate.
+        2.  Trigger: Scheduled or when a data flow finishes.
+        3.  Action: Call the Power BI API to get the refresh status/time.
+        4.  Action: Write that data to a SQL table or SharePoint list (which her report then reads).
+
+### Summary: Your "Next Step" Plan
+To make this manageable for you and her, here is a suggested agenda for your next meeting:
+
+1.  **The "Paperwork" (10 mins):** Co-write the Mentorship Agreement so she can check off her Year-End Goal box immediately.
+2.  **The Quick Win (20 mins):** Whiteboard the architecture for the "Data Flow Refresh" project. Draw the boxes: *Source -> Power Automate Trigger -> API Call -> Storage -> Report.*
+3.  **Homework:** Assign her to watch one "Guy in a Cube" video related to that architecture.
+
 # Sessions
 ##  11-24-2025
 
