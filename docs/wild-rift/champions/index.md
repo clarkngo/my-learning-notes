@@ -25,6 +25,7 @@ parent: Wild Rift
 - Overextend and zoning: place traps to zone out your enemy and allow mage support pokes to land easier.
 
 ## Vayne
+- Use ultimate to go invisible while tumbling
 
 ## Xayah
 - Poke: when you hit your feathers on an enemy, pull them right away. 

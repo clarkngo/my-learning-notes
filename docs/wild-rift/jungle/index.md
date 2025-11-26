@@ -95,9 +95,27 @@ Timers are also critical for objective control.
 - As objectives spawn, efficiency becomes secondary, and prioritization of the objective fight (especially around Baron) is more important than farming every single camp.
 The concept of jungle timers acts like a precise scheduler for a delivery driver: they tell you exactly when the next packages (camps) are ready to be picked up across town to ensure you maximize your revenue (gold) before switching your focus to special, higher-value deliveries (objectives)
 
+# Jungle & Economy Management
+
+---
+
 ## Jungle Tracking
+* **Watch the Scoreboard Gold:** Unlike PC games where you count CS, tracking **Gold** is the most reliable way to spot the enemy jungler's progress. If they have more gold than you without any kills/assists, they likely stole your camps or cleared an extra scuttle.
+* **The "Vertical" Rule:** If you spot the enemy jungler ganking Top lane, their Bottom side jungle is likely undefended. Invade it immediately to steal camps and place deep wards.
+* **Check Mana & HP at Level 1:** Pan your camera to the enemy lanes as the minions arrive. If the enemy Top laner arrives late with missing mana, they leashed the jungler. The enemy jungler started Top and will likely path toward Bot.
+* **Respawn Clock:** Small camps take roughly **1:50** to respawn, and buffs take **2:30**. If you see an empty camp, mentally add 2 minutes; the enemy will likely return there at that time.
 
 ## Jungle Pathing
+* **Path Toward Your Win Condition:** Decide which lane you want to impact *before* the game starts. Start on the **opposite** side of the map (e.g., Start Red/Bot to end your clear at Blue/Top) so you finish Level 3 right next to the lane you want to gank.
+* **The 1:25 Scuttle Timer:** The Rift Scuttler spawns at **1:25**. Aim to finish 3 camps (Buff + 2 small camps) to hit Level 3 exactly as it spawns. Securing this grants vision and speed boosts that control the river.
+* **Don't Force Ganks:** If no lanes are overextended, do not waste time waiting in a bush. "Power farm" your camps or invade. showing yourself without getting a kill reveals your position and allows the enemy to steal your other side.
+* **Reset on Cannon Waves:** If you help a laner kill the enemy, help them shove the wave under the tower. Try to time your recall while a **Cannon Minion** wave is spawning; it buys you more time to walk back out on the map.
 
-## Farming & GPM
+## Farming & GPM (Gold Per Minute)
+* **The 5-Minute Rule:** If you have the Smite summoner spell, **do not** farm lane minions for the first 5 minutes. You receive a severe Gold/XP penalty. Stick to jungle camps and Scuttle Crabs.
+* **GPM Benchmarks:**
+    * **Carries (Mid/ADC/Jungle):** Aim for **800–900+ GPM**. If you are below this, you are wasting too much time rotating without farming.
+    * **Supports:** Focus on presence over gold; GPM is less critical.
+* **Catch Side Waves:** In the mid-game (after the first tower falls), do not group 5 players Mid. If you are a mobile champion, go to the side lanes (Baron/Dragon lanes) to collect massive minion waves that are about to hit your tower, then rotate back.
+* **Never Leave Gold on the Table:** Before rotating to an objective (like Dragon), clear the jungle camps along your path. Leaving camps alive is wasted gold regeneration time.
 
