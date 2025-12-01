@@ -152,3 +152,65 @@ The mentee was also instructed to update the newly created notes or portfolio we
 ***
 
 *Analogy:* The initial mentoring session was like laying the foundation and framing the walls of a new house; Justine knows she needs a house (a mentor/direction) and has a general idea of its size (IC role), but the detailed blueprints (specific goals and skill gaps) still need to be drawn up, so the mentor provided the first tools (the GitHub portfolio and notes site) to start gathering the necessary materials and defining the architecture.
+
+## 12-1-2025
+
+**Meeting Notes: Mentorship Session #2**
+
+| Detail | Information |
+| :--- | :--- |
+| **Date:** | December 1, 2025 |
+| **Attendees:** | Clark Ngo, Justine |
+| **Focus:** | Addressing technical gaps, framework development, and pair programming on action items |
+
+***
+
+### 1. Review and Session Structure
+
+*   Justine noted that she was unable to complete prior action items, which was acceptable as the session was planned to accommodate this.
+*   The meeting quickly switched to a "pair program" or working session structure to address action items together.
+*   The standing action items were to develop a plan for addressing **technical gaps** and a **framework for discovering topics**.
+
+***
+
+### 2. Discussion on Learning Style and Technical Gaps
+
+*   **Learning Preference:** Justine prefers a **hands-on, interactive** learning style. The best way for her to learn is to "follow along" with the examples provided in the materials, whether it's a book or video.
+*   **Target Technologies:** The existing technologies mentioned were **PowerBI** and **SQL**. Justine also expressed interest in learning how to create a template framework for utilizing an **external API**, which might involve using **Python** if the PowerBI route fails.
+*   **Current Success/Focus Area:** A previous collaboration with a coworker resulted in a working solution where the coworker created a **data flow** from an API using **PowerBI online** (not the desktop version). This solution uses dynamic dates and is currently grabbing 24 data points.
+    *   The creation of this data flow was described as "almost very low code," similar to a drag-and-drop process like Power Automate.
+*   **Justine's Specific Gap:** Justine can read and edit existing frameworks once they are laid out, but she lacks the knowledge to recreate or start the code/framework from scratch.
+
+***
+
+### 3. Strategy for Addressing Technical Gaps (API/Data Flow Focus)
+
+Clark outlined a structured plan focusing on understanding the existing coworker's API-to-table data flow solution:
+
+1.  **Understand and Document:** Document the existing process in GitHub (making sure to exclude company-specific data). This helps in building a mind map of how to create a template.
+2.  **Go Deeper:** Understand and document each field or attribute.
+3.  **API Fundamentals:** Understand the scope of **API technology**, what it allows, and what it doesn't allow. Talk to both technical and non-technical coworkers to gain understanding from two different paradigms.
+4.  **Analyze Data Flow API:** Apply the same analytical approach to the data flow API solution.
+5.  **Quantify Process Steps:** Identify the sequential steps in the process (e.g., use an element, request the URL resource, then parse). Listing these steps helps:
+    *   Communicate the solution intuitively to coworkers or stakeholders.
+    *   Identify steps that could be removed, improved, or justify an alternative solution (like using Python).
+6.  **Documentation Structure:** Create two sections for documentation: a "quick setup" section for experienced users who only need a quick reminder, and a section for deep understanding (for new colleagues or when details are forgotten). Justine agreed that recreating the documentation is the best way to start, as she anticipates calling APIs again in the future.
+
+***
+
+### 4. Working Session (Drafting Documentation)
+
+*   Justine shared her screen and began drafting documentation notes in GitHub/docs.
+*   She used the structure: `## PowerBI` and `### high level`.
+*   **Initial Notes Drafted:**
+    *   The solution used **M code**, also known as the Advanced Query Editor.
+    *   The M code allowed editing anything plug-and-play without going through each step individually.
+    *   **Scenario One:** The process involved two APIs with two different API tokens (from two different sites), requiring the use of a variable separated by names (e.g., API token for this one, API token for another one).
+
+***
+
+### 5. New Action Item
+
+*   Clark created a task header at the bottom of Justine's draft documentation.
+*   **Task (Checkbox format):** Understand the system architecture of the data flow solution.
+    *   *Note:* Justine should find something interesting in that space and keep going.
