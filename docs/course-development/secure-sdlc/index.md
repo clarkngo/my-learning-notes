@@ -13,6 +13,71 @@ parent: Course Development
 1. TOC
 {:toc}
 
+# Version 2
+
+To recreate this exact style of interactive lab for future weeks (or different topics), use the following **Master Prompt**.
+
+You can copy and paste this into a new chat with me (or another AI) to generate the next exercise instantly.
+
+***
+
+### **The Master Prompt**
+
+> **Act as a Senior Application Security Engineer and Instructor.**
+>
+> I need you to generate a **standalone HTML file** for an interactive secure coding exercise. This file must use **PyScript** to run Python code directly in the browser (client-side only, no backend).
+>
+> **1. The Goal:**
+> Create a single-file HTML lab for **[INSERT TOPIC HERE, e.g., Week 2: CI/CD Security]**.
+>
+> **2. Technical Requirements (Strict Adherence):**
+> * **Single File:** All CSS, JavaScript, and Python logic must be embedded in one `.html` file.
+> * **Library:** Use PyScript (release `2023.05.1`).
+> * **Layout:** Use a **Split-Screen** layout (Instructions on the Left, Code Editor on the Right).
+> * **Editor Features:**
+>     * Custom `<textarea>` with line numbers that sync on scroll.
+>     * Tab support (inserts 4 spaces).
+>     * Shift+Tab support (un-indents).
+>     * Autosave to `localStorage` (debounce 3 seconds).
+> * **Console:** A black div (`#console-output`) for output. **Redirect all Python `print()` statements** to this div using a custom `sys.stdout` class. Do not show browser alerts.
+> * **PDF Export:** Include a button to export a report using `jspdf`. The PDF must include the Student Name, Date, Status (Passed/Failed), and the code they wrote.
+> * **Loading Screen:** Include the "Hacker Boot Sequence" animation (green text on black) that hides automatically when PyScript is ready.
+>
+> **3. The Content Structure:**
+> * **Left Panel:**
+>     * Title: "Exercise: [Title]"
+>     * Scenario: A realistic business context for the vulnerability.
+>     * Task: Step-by-step instructions.
+>     * "Why This Matters": A brief educational takeaway.
+> * **Right Panel (Python Editor):**
+>     * Provide **broken/vulnerable code** by default.
+>     * The user must modify a specific function to fix it.
+> * **Grading Logic (`<py-script>`):**
+>     * Write a `run_tests()` function.
+>     * It must execute the user's code using `exec()`.
+>     * It must run at least **two test cases**:
+>         1.  **Normal Case:** Proves the code still works (e.g., valid input).
+>         2.  **Attack Case:** Simulates the specific vulnerability (e.g., negative input, SQL injection string).
+>     * If the Attack Case returns a safe result (or raises a caught error), update `window.submissionStatus` to "PASSED".
+>     * If the Attack Case succeeds (exploits the bug), log "VULNERABILITY DETECTED" and set status to "FAILED".
+>
+> **4. Specific Exercise Details for THIS Request:**
+> * **Vulnerability:** [Describe the specific bug, e.g., Hardcoded Credentials]
+> * **Test Case Logic:** [Describe how to verify the fix, e.g., check if the variable 'password' is still in the source code]
+>
+> **Generate the complete HTML code now.**
+
+***
+
+### **How to Use This**
+When you are ready for **Week 2**, you just paste the prompt above and fill in section **#4** like this:
+
+> **4. Specific Exercise Details for THIS Request:**
+> * **Vulnerability:** Insecure CI/CD Pipeline Configuration (Simulated with YAML or Python dict).
+> * **Test Case Logic:** Check if the user added a "SAST Scan" step to the build dictionary before the "Deploy" step.
+
+# Version 1
+
 Based on the syllabus provided, I have redesigned the prompts to ensure they strictly align with the **Course Outcomes (COs)** and the specific definition of **Hands-On Skills (HOS)** assignments.
 
 According to the syllabus, **Hands-On Skills** are distinct from the larger Virtual Labs; they are focused exercises where students "learn specific programming languages, APIs, or tools" and account for 20% of the grade. The course also emphasizes balancing **usability and security**  and incorporating **encryption and access control**.
@@ -76,6 +141,93 @@ Here is the redesigned prompt strategy:
 > "Create a final skill check on 'identifying common vulnerabilities' in modern environments (APIs). Ask the student to use a tool like Postman or `curl` (command line) to inspect the headers of a response. They must identify missing security headers (like HSTS or Content-Security-Policy) and write the code configuration to add them."
 
 ---
+
+### Hands-on Skills Weekly Breakdown
+Since you are building **interactive HTML webpages** to host these skills yourself, the technical constraints of the browser are just as important as the pedagogical goals. You need languages that are easy to run or simulate directly in the browser without a complex backend server.
+
+### **Proposal: The "Browser-Native" Polyglot Approach**
+
+I recommend using **Python** as the primary language for logic/process skills (70%), and **SQL/JavaScript** specifically for the web-attack skills (30%).
+
+**Why this combination?**
+1.  **Python** is concise and readable. You can easily embed a real Python environment in your HTML pages using libraries like **PyScript** or **Pyodide**, allowing students to run code directly in the browser.
+2.  **SQL & JavaScript** are mandatory for Module 5 (Injection) because you cannot teach "SQL Injection" or "Cross-Site Scripting (XSS)" without them.
+3.  **Avoid Compilers:** Avoiding C++ or Java for the *interactive* parts saves you from needing a heavy backend compiler.
+
+---
+
+### **Weekly Language Breakdown**
+
+Here is the proposed language for each module’s Hands-On Skill (HOS), designed to work within your HTML build:
+
+#### **Week 1: Software Security (Introduction)**
+* **Language:** **Python**
+* **Why:** You can provide a simple script with an "integer overflow" logic error.
+* **HTML Interaction:** A text editor box where students change `x = x + 1` to `if x < MAX: x = x + 1`.
+* **Validation:** Your page checks if the code output stays within limits.
+
+#### **Week 2: Secure Development Lifecycle (SDLC)**
+* **Language:** **YAML** (Simulated)
+* **Why:** SDLC automation usually happens in configuration files (GitHub Actions / GitLab CI).
+* **HTML Interaction:** A text area showing a broken pipeline.
+* **Validation:** Use JavaScript Regex to verify the student added the string `- run: security-scan` in the correct location.
+
+#### **Week 3: Security Assessment**
+* **Language:** **Python**
+* **Why:** Focus on "Logic" (Authentication). Python reads like pseudocode, making it easy for students to focus on the *logic* of a "Lockout Policy" rather than syntax.
+* **HTML Interaction:** Students write a `check_password()` function.
+* **Validation:** Run their function in-browser with Pyodide against 5 test cases.
+
+#### **Week 4: Secure Architecture**
+* **Language:** **JSON** (Policy Definition)
+* **Why:** Architecture is about rules, not algorithms.
+* **HTML Interaction:** Display a "User Role" JSON object. Ask students to delete `"admin": true` or change permissions.
+* **Validation:** Simple JSON parsing in JavaScript to check if the dangerous permission was removed.
+
+#### **Week 5: Secure Design (The "Injection" Week)**
+* **Language:** **SQL** & **HTML/JavaScript**
+* [cite_start]**Why:** You **must** use these to teach Injection[cite: 250].
+* **HTML Interaction (Task A):** A mock SQL query box. Student types `' OR '1'='1` to bypass a login.
+* **HTML Interaction (Task B):** An input box vulnerable to XSS. Student types `<script>alert(1)</script>`.
+* **Validation:** JavaScript on your page checks if the input string contains the specific attack vector.
+
+#### **Week 6: Testing & Execution**
+* **Language:** **Python**
+* [cite_start]**Why:** Python is the industry standard for writing "Fuzzers" and test scripts[cite: 252].
+* **HTML Interaction:** Students write a loop that generates random characters to crash a mock function.
+* **Validation:** Verify the loop runs at least 100 times and generates specific "bad" inputs.
+
+#### **Week 7: Secure Deployment**
+* **Language:** **Bash / Shell** (Simulated)
+* **Why:** Deployment security is about command-line tools and patching.
+* **HTML Interaction:** A fake "Terminal" window (black background, green text).
+* **Validation:** Student types `npm audit fix` or `pip install --upgrade`. You simply match the string they typed.
+
+#### **Week 8: Post-Release Support**
+* **Language:** **Python**
+* **Why:** Incident response often involves parsing logs.
+* **HTML Interaction:** specific Regex construction.
+* **Validation:** Student types a Regex pattern to find "credit card numbers" in a text block.
+
+#### **Week 9: Real-World Application (Cryptography)**
+* **Language:** **Python**
+* **Why:** Python has standard libraries (`hashlib`) that are easy to demonstrate "Hashing" vs. "Encryption".
+* **HTML Interaction:** Student uses `hashlib.sha256(password + salt)` to fix a vulnerability.
+* **Validation:** Check if their output matches the expected secure hash.
+
+#### **Week 10: Future Direction (APIs)**
+* **Language:** **HTTP / cURL** (Simulated)
+* **Why:** Modern security is about API headers.
+* **HTML Interaction:** A tool that looks like "Postman" or a Terminal.
+* **Validation:** Student must add a header `Content-Security-Policy: default-src 'self'`.
+
+---
+
+### **Technical Tip for your HTML Build**
+
+Since you are building these yourself:
+1.  **For Python Weeks:** Use [PyScript](https://pyscript.net/). It allows you to place a `<py-script>` tag in your HTML, and the code runs entirely in the user's browser. You don't need a server.
+2.  **For Validation:** You don't always need to "run" the code. For many security exercises, **Regular Expressions (Regex)** in JavaScript are enough to check if the student found the right answer (e.g., did they type the correct SQL injection string?).
 
 ### **Why These Were Redesigned**
 1.  **Emphasis on Usability:** Week 3 was adjusted because the syllabus explicitly lists "balance between usability and security" as a core outcome, which is often overlooked in pure coding drills.

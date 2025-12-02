@@ -1,7 +1,25 @@
 ---
 title: AWS Certified AI Practitioner  
 layout: default
+parent: Certifications
 ---
+
+# White papers
+- [What Is Artificial Intelligence (AI)?](https://aws.amazon.com/what-is/artificial-intelligence/)
+- [AWS Cloud Adoption Framework for Artificial Intelligence, Machine Learning, and Generative AI](https://docs.aws.amazon.com/whitepapers/latest/aws-caf-for-ai/aws-caf-for-ai.html)
+
+# Digital Courses
+- [Exam Prep Plan Overview: AWS Certified AI Practitioner (AIF-C01 - English)](https://skillbuilder.aws/learn/ZWSD22MDDU/exam-prep-plan-overview-aws-certified-ai-practitioner-aifc01--english/28AX3C3UHZ?parentId=FBV4STG94B)
+- [AWS Artificial Intelligence Practitioner Learning Plan](https://skillbuilder.aws/learning-plan/G8ENMJ5QBE/aws-artificial-intelligence-practitioner-learning-plan/SU2A1EJM1A)
+  - Fundamentals of Machine Learning and Artificial Intelligence
+  - Exploring Artificial Intelligence Use Cases and Applications
+  - Responsible Artificial Intelligence Practices
+  - Developing Machine Learning Solutions
+  - Developing Generative Artificial Intelligence Solutions
+  - Optimizing Foundation Models
+  - Security, Compliance, and Governance for AI Solutions
+  - Essentials of Prompt Engineering
+
 
 ## AWS Certified AI Practitioner (AIF-C01) Study Notes
 
