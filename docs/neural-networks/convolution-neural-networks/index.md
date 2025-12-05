@@ -13,6 +13,16 @@ parent: Neural Networks
 1. TOC
 {:toc}
 
+# Visualized Explanation
+- [Convolutional Neural Networks Explained (CNN Visualized)](https://youtu.be/pj9-rr1wDhM?si=egpbExOugTcBTrbr)
+- [What Are Word Embeddings?](https://youtu.be/hVM8qGRTaOA?si=RaqrH3VvFpwulCvq)
+
+# Notes
+- 3x3 can be used for HD images but your focus is a small feature. i.e. traffic light
+- filters going for 32->64->64->128. this is increasing because the permutations of different nodes. If its the other way, it will losing information of the features.
+- paddings in CNN is like putting a picture frame before you start cutting up your image. You will ran out of picture! Padding will add extra space around the edges of the picture before you start looking at it closely. Keeps the picture the right size to analyze all the details.
+- pooling is reducing with the max values in a slice. It is downsampling.
+
 ## Analogy
 Here is an analogy using a **Corporate Chain of Command** to explain the hierarchy and the feed-forward process.
 
