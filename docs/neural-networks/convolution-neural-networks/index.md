@@ -23,6 +23,10 @@ parent: Neural Networks
 - paddings in CNN is like putting a picture frame before you start cutting up your image. You will ran out of picture! Padding will add extra space around the edges of the picture before you start looking at it closely. Keeps the picture the right size to analyze all the details.
 - pooling is reducing with the max values in a slice. It is downsampling.
 
+- convolution -> convolution -> pooling vs convolution -> pooling -> convolution -> pooling
+    - Sequential convolution if features are really important. i.e. X-rays
+    - Alternating convolution and pooling if want to extract important features and expand again. i.e. number images.
+
 ## Analogy
 Here is an analogy using a **Corporate Chain of Command** to explain the hierarchy and the feed-forward process.
 
