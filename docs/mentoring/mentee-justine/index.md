@@ -13,7 +13,10 @@ parent: Mentoring
 1. TOC
 {:toc}
 
-# Mentee Goal
+# Goal
+Read: The Data Warehouse Toolkit (Ch 1-2) to understand "building from scratch."
+
+# Mentee Goal Overview
 The mentee, Justine, has several overlapping goals that led her to seek mentorship and defined the initial session:
 
 **1. Primary Goal (The Driving Factor): To Fulfill a Company Year-End Goal**
@@ -214,3 +217,43 @@ Clark outlined a structured plan focusing on understanding the existing coworker
 *   Clark created a task header at the bottom of Justine's draft documentation.
 *   **Task (Checkbox format):** Understand the system architecture of the data flow solution.
     *   *Note:* Justine should find something interesting in that space and keep going.
+
+
+## 12-8-2025
+The mentorship session focused on refining the understanding of API fundamentals, M code, and data flow analysis within Power BI, specifically using Big Commerce environments. To track areas for deeper focus, the mentor advised the user to create issues in a repository.
+
+### API Connection and Environment Details
+
+For the particular Power Query implementation discussed, the connection to the Big Commerce APIs specifically utilized only the **access token** and the **store hash**, bypassing the need for a client ID or client secret.
+
+Key details about the connection parameters include:
+
+*   **Store Hash:** This serves as the unique identifier for a Big Commerce web store front end. It is consistent and does not change even if new API tokens are generated.
+*   **Access Token:** This is a unique token generated when an API is created on Big Commerce.
+*   **Data Sources:** The project involves connecting to two distinct environments, "Big Commerce EC" (Emergency Care) and "Big Commerce Sage," which function as separate systems.
+
+### Data Flow, M Code, and Merging
+
+The M code was used to connect to these two different API sources and process their respective data. A key step in the process was performing a **merge** operation on the M code side to combine the data from both systems. The merged output results in a single table for the end user in Power BI, with an added field or column that labels whether the data originated from EC or Sage.
+
+### Account Hierarchy and Security Gaps
+
+A notable point of confusion revolved around the API token generation versus its usage:
+
+1.  The user generated the API token using their personal Big Commerce account, as they were the authorized individual.
+2.  However, the Power BI data flow that refreshes the data uses the company's **service account**.
+3.  Because the service account executes the data flow, team members with access to that account can view the connection parameters (store hash and access token).
+
+The mentor raised important security research points for the user, asking them to investigate:
+
+*   Whether the API token will still function if the user account that originally generated it is deleted.
+*   Whether the generated token expires, and if setting an expiration policy would be considered a security best practice.
+
+### System Diagramming and Architecture
+
+The mentor advised using visual tools to document the system architecture:
+
+*   **Process Flow Diagram:** Recommended for showing how the data comes from various sources and subsequently merges.
+*   **Sequence Diagram:** Introduced as a detailed diagramming tool to illustrate the back-and-forth communication flow between different systems during an API call (e.g., how the front end requests data from the back end, which then requests data from the database).
+
+The mentor also stressed the importance of verifying assumptions, such as whether the M code automatically utilizes a `GET` request, by consulting documentation or AI tools to ensure stakeholders receive answers based on certainty rather than speculation.
