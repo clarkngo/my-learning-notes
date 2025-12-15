@@ -7,6 +7,30 @@ parent: Mentee Justine
 
 # Sessions
 
+## 12-15-2025
+**Meeting Notes: Mentorship Session #4 with Justine**
+
+**Session Overview**
+The session began with a review of outstanding tasks, noting that the previously assigned process flow documentation was not completed. The discussion shifted to addressing **technical gaps in PowerBI and Power Query**, specifically regarding Justine's reliance on AI trial-and-error for building complex formulas. Clark and Justine explored strategies to improve efficiency using "Meta Prompting" and established a "small wins" approach to documentation.
+
+**Key Discussions**
+*   **Power Query & Technical Gaps:** Justine described their workflow in Power Query as similar to Excel formulas, used primarily for pulling data, creating calculated columns, and filtering measures. However, they struggle with complex queries—specifically **date ranges and time buckets** (e.g., Year-to-Date vs. Full Year comparisons)—often relying on iterative prompting with ChatGPT to find solutions.
+*   **AI Prompt Engineering Strategies:** Clark advised moving away from inefficient, repetitive prompting. Instead, once a solution is found via trial-and-error, Justine should ask the AI to generate a **"Master Prompt," "Meta Prompt," or "One-shot Prompt"**. This template can be used to solve similar problems immediately in the future without needing multiple iterations.
+*   **Documentation Philosophy:** To overcome procrastination on documentation (like the refresh error fix or process flows), Clark emphasized starting with **"small wins."** For example, listing steps in text before making a diagram, or creating a diagram with only three components to build momentum.
+
+***
+
+**Action Items**
+
+*   **Document the Refresh Error:** Create a text-based list of the steps Andrew used to fix the report refresh error, then share it with the team.
+*   **Create "Common Gotchas" Log:** Start documenting recurring technical struggles, specifically focusing on **date ranges and time period comparisons** in Power Query, to track and close knowledge gaps.
+*   **Implement Meta Prompting:** After solving a complex problem with AI, explicitly ask the AI to provide a **"prompt template" or "one-shot prompt"** that creates the correct context for similar future issues.
+*   **Run AI Retrospectives:** When a prompt fails initially, ask the AI for a "gap analysis" or "retrospective" to understand the difference between the initial request and the final working solution.
+*   **Start the Process Flow:** Begin the process flow assignment by mapping out just **three components and two arrows** rather than attempting the entire architecture at once.
+
+***
+
+To clarify the AI strategy discussed, think of your current workflow like **guessing a lock combination**—you keep trying numbers until it opens (trial-and-error). The "Meta Prompt" strategy Clark suggested is like asking the lock maker for the **master key** once you've opened it; next time you encounter that specific type of lock (problem), you don't have to guess the numbers again, you just use the key.
 
 ## 12-8-2025
 The mentorship session focused on refining the understanding of API fundamentals, M code, and data flow analysis within Power BI, specifically using Big Commerce environments. To track areas for deeper focus, the mentor advised the user to create issues in a repository.
