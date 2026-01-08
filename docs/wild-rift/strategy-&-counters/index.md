@@ -16,7 +16,8 @@ parent: Wild Rift
 
 The following is a summary of the tips provided in the sources regarding effective recall timers in Wild Rift:
 
-## Recalling
+
+# Recalling
 
 Source: talanwr's [This Wild Rift skill is way more important than you think](https://youtu.be/ixYdazXV4ao)
 
@@ -57,4 +58,37 @@ Source: talanwr's [This Wild Rift skill is way more important than you think](ht
 
 Effective recalling can be compared to catching a specialized commuter train: You don't just jump on the train (recall) whenever you feel like it. You need to ensure you've loaded all your luggage (pushed the wave and secured gold), and you need to time your trip carefully so you arrive at the crucial meeting (the objective or item spike) right when it starts, not too early and definitely not too late.
 
-## How to Counter (Tanks, Assassins, etc.)
+
+# How to Counter (Classes & Mechanics)
+
+---
+
+## Countering Tanks (Mundo, Malphite, Ornn)
+* **Ignore or Shred:** Either kill them *last* (dive the backline) or build specifically to kill them *first*. Do not half-commit.
+* **The "Giant Slayer" Rule:** If the enemy has 2+ tanks, ADCs and Mages *must* select the **Giant Slayer** rune in the pre-game lobby. It grants bonus damage based on bonus HP.
+* **Itemize % Penetration:** Flat penetration (like Youmuu’s) is useless here. You need **% Armor/Magic Penetration** (Mortal Reminder, Void Staff, Terminus) and **% HP Damage** (Blade of the Ruined King, Liandry’s, Divine Sunderer).
+* **Don't Group Tight:** Against engage tanks like Malphite or Amumu, stay scattered. If your team is spread out, their ultimate hits 1 person instead of 5.
+
+## Countering Assassins (Zed, Akali, Master Yi)
+* **Exhaust is King:** The Support (or Mid) should take the **Exhaust** summoner spell. Use it the moment the Assassin commits to a fight to reduce their damage by 40%.
+* **Stasis (Zhonya's):** If you are the target, buy the Stasis boot enchant early. Use it to dodge their primary burst (e.g., Zed Death Mark pop, Fizz Shark).
+* **Crowd Control (CC):** Assassins are squishy. Save your hard CC (Stun, Root, Knockup) exclusively for them. Do not waste it on the Tank.
+* **Vision Control:** Assassins love to flank. Place wards over walls and in the river to spot them before they get behind you.
+
+## Countering Mages (Lux, Vex, Brand)
+* **Dodge Perpendicular:** Most mage spells are linear skill shots. Dodge *sideways* (90 degrees), not backwards.
+* **Buy Magic Resist:** Even a small amount helps. **Wit’s End** (for ADCs) or **Force of Nature** (for Tanks) drastically reduces their burst potential.
+* **Bait the Cooldowns:** Pretend to walk into their range, then step back immediately to bait out their main spell (e.g., Lux Bind). Once they miss, you have ~8 seconds to punish them freely.
+
+## Countering Enchanters (Yuumi, Soraka, Lulu)
+* **Anti-Heal/Shield is Mandatory:**
+    * **Vs Healers:** Buy **Executioner’s Calling** (AD) or **Oblivion Orb** (AP) immediately—do not wait to finish the full item.
+    * **Vs Shielders:** AD Assassins/Bruisers should build **Serpent’s Fang**; Mages should build **Oceanid’s Trident**. These items melt shields instantly.
+* **Focus Them First:** In teamfights, Enchanters are often the highest priority target. If you kill the Soraka, the unkillable tank in front of her suddenly becomes killable.
+
+## Countering Split Pushers (Fiora, Jax, Hullbreaker users)
+* **Force the 5v4:** If the enemy Fiora is splitting Top and her team is Mid, **engage on the 4 enemies Mid immediately**. You must win the fight and take an objective before Fiora takes your inhibitor.
+* **Collapse Safely:** If you go to stop the split pusher, send **at least 2 people** (one with CC). Never send a squishy carry alone; they will just die and feed the splitter more.
+* **Clear the Wave:** Do not chase the champion; kill their minion wave first. Without minions, they cannot take your tower.
+
+---
