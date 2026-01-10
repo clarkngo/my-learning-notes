@@ -1,6 +1,7 @@
 ---
 title: CityU AWS Apprenticeship
 layout: default
+parent: CityU
 ---
 
 
