@@ -41,7 +41,7 @@ Source: [A Discussion with the Executive Producer of Wild Rift](https://www.yout
 *   **Silence Harms the Community:** The developer team learned that extended periods of silence regarding hot-button topics like matchmaking damage community trust. 
 *   **Trust is the Core Currency:** Because the developers are asking for players' time and investment, maintaining a continuous dialogue and transparently addressing game flaws is essential to validating player efforts and maintaining the game's health. Furthermore, openly addressing optics—such as top leaderboard spots being occupied by rank-boosting services—is vital for the perceived integrity of the game.
 
-# Four Quadrants of Players
+**Four Quadrants of Players**
 
 During the discussion on matchmaking, the Executive Producer conceptualizes the player base using a "two-by-two" grid based on two specific metrics: **skill level** and **engagement** (how much time a player spends in the game). 
 
