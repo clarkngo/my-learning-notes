@@ -1,5 +1,5 @@
 ---
-title: Rotations
+title: Mid Game Rotation
 layout: default
 parent: Macro & Game Phases
 ---
