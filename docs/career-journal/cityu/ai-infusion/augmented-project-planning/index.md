@@ -86,4 +86,81 @@ Use AI to analyze project data and help with the "Extreme" or "Hybrid" managemen
 
  |
 
-Would you like me to draft the specific "AI Task" instructions for one of these documents?
+
+
+To maintain the course's focus on **DIT 615 Planning and Managing IT Projects** while infusing AI, here is a specific, minimal task for each of your ten tutorials.
+
+### **Phase 1: Foundation & Planning (TT01 – TT03)**
+
+| Tutorial | Original Focus | AI Infusion Task |
+| --- | --- | --- |
+| **TT01** | <br>**Jira Basics & Timelines:** Creating tasks and sub-tasks.
+
+ | <br>**The Persona Prompt:** Ask an AI to act as a "Senior Project Coordinator" and list 5 technical sub-tasks for a "Client Discovery Meeting" to ensure no details are missed before entering them into Jira.
+
+ |
+| **TT02** | <br>**Project Hierarchy:** Using Epics, Stories, and Tasks for an office move.
+
+ | <br>**The WBS Architect:** Feed the "Office Move" scenario to an AI. Ask it to generate a 3-level Work Breakdown Structure (WBS). Students compare the AI's structure to the one provided in the assignment.
+
+ |
+| **TT03** | <br>**Team Management:** Creating dummy users and assigning tasks.
+
+ | <br>**The Team Bio Generator:** Use AI to generate a 1-sentence "Professional Skillset" for each of your 6 dummy users (e.g., "Senior Network Engineer with 10 years experience"). Use these profiles to justify your task assignments.
+
+ |
+
+---
+
+### **Phase 2: Execution & Quality (TT04 – TT07)**
+
+| Tutorial | Original Focus | AI Infusion Task |
+| --- | --- | --- |
+| **TT04** | <br>**Change Control:** Customizing workflows and rules.
+
+ | <br>**The Logic Auditor:** Explain your new "Review" status and rules to an AI. Ask: "What are two ways a developer might accidentally bypass this 'Submit for Review' rule?"
+
+ |
+| **TT05** | <br>**Quality & Dashboards:** Tracking "Test" issue types.
+
+ | <br>**The QA Script Writer:** Choose one "Story" from your backlog. Ask an AI to generate three "Test Cases" (including an edge case) to be entered into your Jira "Test" issue type.
+
+ |
+| **TT06** | <br>**Estimations:** Sprint planning and story points.
+
+ | <br>**The Planning Poker Partner:** Provide a User Story to the AI and ask it to provide a Story Point estimate (1, 2, 3, 5, 8) with a 2-sentence justification based on complexity and uncertainty.
+
+ |
+| **TT07** | <br>**Risk Management:** Custom risk boards and matrices.
+
+ | <br>**The Risk Scout:** Use AI to identify three "Hidden Risks" for the Hardware Store app scenario—risks that aren't immediately obvious, such as data privacy or API downtime.
+
+ |
+
+---
+
+### **Phase 3: Advanced Frameworks (TT08 – TT10)**
+
+| Tutorial | Original Focus | AI Infusion Task |
+| --- | --- | --- |
+| **TT08** | <br>**BigPicture:** Complex project visualization and Gantt charts.
+
+ | <br>**The Critical Path Analyst:** Ask an AI to explain how "Predictive Analytics" could use the data in a BigPicture Gantt chart to warn a Project Manager about potential delays 2 weeks in advance.
+
+ |
+| **TT09** | <br>**Extreme PM:** Agile/XP planning with client involvement.
+
+ | <br>**The Story Refiner:** Take the client's "ambiguous" hardware store requirements and ask an AI to rewrite them into three professional User Stories with clear Acceptance Criteria.
+
+ |
+| **TT10** | <br>**Hybrid PM:** Waterfall rollout for Agile development.
+
+ | <br>**The Hybrid Bridge:** Ask an AI to identify one potential conflict that arises when a "Marketing" team (Waterfall) waits for a "Development" team (Agile) to finish a feature.
+
+ |
+
+---
+
+### **Implementation Note**
+
+For each TT, you only need to add a small **"AI Step"** box before the final summary. This ensures students see AI as a **support tool** for the project manager role, not a replacement for learning Jira.
