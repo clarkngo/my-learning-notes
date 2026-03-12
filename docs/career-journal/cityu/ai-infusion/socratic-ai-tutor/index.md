@@ -4,6 +4,16 @@ layout: default
 parent: AI Infusion
 ---
 
+# In-Page Navigation
+{: .no_toc }
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+
 A **Socratic AI Tutor** is a learning companion designed to help you find answers on your own rather than simply giving them to you. It mimics the "Socratic Method"—a 2,400-year-old teaching style named after the philosopher Socrates—which uses a series of guided questions to stimulate critical thinking and uncover underlying assumptions.
 
 In the world of AI, this is a major shift from the standard "chatbot" experience where you ask a question and get a direct answer.

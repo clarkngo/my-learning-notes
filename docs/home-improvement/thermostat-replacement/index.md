@@ -154,11 +154,11 @@ This is the most important part of your documentation—the hurdles we actually 
 
 ## **Success Validation Criteria**
 
-✅ **Mechanical click heard** when adjusting dial
-✅ **Heater cycles on/off automatically** - does not stay on continuously
-✅ **Temperature readings confirm function** - 117°F surface, 214°F element when active
-✅ **Proper temperature control** - heater shuts off when set temperature reached
-✅ **No continuous operation** - prevents overheating and energy waste
+- ✅ **Mechanical click heard** when adjusting dial
+- ✅ **Heater cycles on/off automatically** - does not stay on continuously
+- ✅ **Temperature readings confirm function** - 117°F surface, 214°F element when active
+- ✅ **Proper temperature control** - heater shuts off when set temperature reached
+- ✅ **No continuous operation** - prevents overheating and energy waste
 
 **Critical Difference:** The old thermostat failed with contacts welded shut, causing continuous operation. The new 28A-rated thermostat properly cycles based on temperature demand, ensuring safe and efficient heating operation.
 

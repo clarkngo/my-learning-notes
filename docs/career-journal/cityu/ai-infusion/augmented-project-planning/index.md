@@ -4,6 +4,17 @@ layout: default
 parent: AI Infusion
 ---
 
+
+# In-Page Navigation
+{: .no_toc }
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+
 To enhance these modules with AI infusion while keeping the changes minimal, you can introduce specific AI-driven tasks that utilize Jira’s existing automation or external generative AI tools to assist with project management artifacts.
 
 Here are suggestions for infusing AI into your ten documents:

@@ -4,6 +4,17 @@ layout: default
 parent: AI Infusion
 ---
 
+
+# In-Page Navigation
+{: .no_toc }
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+
 It is better to provide a **specific example for each TT**.
 
 While a generic template is "minimal" for you to create, it increases the "cognitive load" for students. If the prompt is too vague, students often provide poor inputs to the AI, get generic results, and view the task as busywork.

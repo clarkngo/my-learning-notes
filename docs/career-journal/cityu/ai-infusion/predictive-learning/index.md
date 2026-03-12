@@ -4,6 +4,17 @@ layout: default
 parent: AI Infusion
 ---
 
+
+# In-Page Navigation
+{: .no_toc }
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+
 The **"Pre-Flight Briefing"** is a fantastic choice because it transforms the AI into a personalized tutor that sets the stage before the student even touches the keyboard. This shifts the students from "clicking through steps" to "looking for specific concepts".
 
 Here is a proposed structure to update your **Technology Tool (TT)** activities using this AI-infused model.
