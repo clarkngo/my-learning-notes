@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">
+    Thermostat Replacement Process Flow
+  </text>
+
+  <!-- Phase 1: Safety -->
+  <rect x="50" y="60" width="150" height="100" rx="10" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+  <text x="125" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">PHASE 1: SAFETY</text>
+  <text x="125" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Turn off breaker</text>
+  <text x="125" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Test voltage</text>
+  <text x="125" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Remove old unit</text>
+  <text x="125" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Identify wires</text>
+
+  <!-- Arrow 1 -->
+  <line x1="200" y1="110" x2="240" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Phase 2: Planning -->
+  <rect x="250" y="60" width="150" height="100" rx="10" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="325" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">PHASE 2: PLANNING</text>
+  <text x="325" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Select 28A thermostat</text>
+  <text x="325" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Map wire colors</text>
+  <text x="325" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Prepare materials</text>
+  <text x="325" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Red wing nuts</text>
+
+  <!-- Arrow 2 -->
+  <line x1="400" y1="110" x2="440" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Phase 3: Installation -->
+  <rect x="450" y="60" width="150" height="100" rx="10" fill="#e8f5e8" stroke="#4caf50" stroke-width="2"/>
+  <text x="525" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">PHASE 3: INSTALL</text>
+  <text x="525" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Ground connection</text>
+  <text x="525" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Line/Load wiring</text>
+  <text x="525" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Cap unused wires</text>
+  <text x="525" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Mount securely</text>
+
+  <!-- Arrow 3 (downward) -->
+  <line x1="525" y1="160" x2="525" y2="200" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Phase 4: Testing -->
+  <rect x="450" y="210" width="150" height="100" rx="10" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="525" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">PHASE 4: TESTING</text>
+  <text x="525" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Restore power</text>
+  <text x="525" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Test mechanical click</text>
+  <text x="525" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">IR temperature check</text>
+  <text x="525" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">Validate operation</text>
+
+  <!-- Critical Steps Box -->
+  <rect x="50" y="200" width="350" height="180" rx="10" fill="#f5f5f5" stroke="#666" stroke-width="2"/>
+  <text x="225" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Critical Success Factors</text>
+
+  <circle cx="70" cy="250" r="8" fill="#f44336"/>
+  <text x="85" y="255" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Metal-to-Metal Grounding</text>
+  <text x="85" y="270" font-family="Arial, sans-serif" font-size="10" fill="#666">Remove plastic washers, ensure bare copper touches silver chassis</text>
+
+  <circle cx="70" cy="300" r="8" fill="#ff9800"/>
+  <text x="85" y="305" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Over-Spec Rating</text>
+  <text x="85" y="320" font-family="Arial, sans-serif" font-size="10" fill="#666">28A thermostat prevents contact welding under high load</text>
+
+  <circle cx="70" cy="350" r="8" fill="#4caf50"/>
+  <text x="85" y="355" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Individual Wire Capping</text>
+  <text x="85" y="370" font-family="Arial, sans-serif" font-size="10" fill="#666">Cap C1 and C2 separately to prevent short circuit</text>
+
+  <!-- Success Box -->
+  <rect x="50" y="400" width="700" height="80" rx="10" fill="#e8f5e8" stroke="#4caf50" stroke-width="2"/>
+  <text x="400" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Troubleshooting Guide</text>
+  <text x="70" y="450" font-family="Arial, sans-serif" font-size="11" fill="#333">No Heat: Check breaker, verify LINE/LOAD connections, test mechanical click</text>
+  <text x="70" y="465" font-family="Arial, sans-serif" font-size="11" fill="#333">Always On: Check for crossed wires, verify terminal connections, ensure quality rating</text>
+
+  <!-- Final validation -->
+  <rect x="50" y="500" width="700" height="50" rx="10" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="400" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">Success Validation</text>
+  <text x="400" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Thermostat cycles on/off automatically (not continuously on), mechanical click heard, proper temperature control</text>
+</svg>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">
+    Bathtub Overflow Gasket Replacement Process
+  </text>
+
+  <!-- Phase 1: Assessment -->
+  <rect x="50" y="50" width="150" height="100" rx="10" fill="#ffe6e6" stroke="#ff4444" stroke-width="2"/>
+  <text x="125" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">
+    PHASE 1: ASSESS
+  </text>
+  <text x="125" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Check for leaks
+  </text>
+  <text x="125" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Identify damage
+  </text>
+  <text x="125" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Test overflow function
+  </text>
+  <text x="125" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Check ceiling below
+  </text>
+
+  <!-- Arrow 1 -->
+  <line x1="200" y1="100" x2="240" y2="100" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Phase 2: Removal -->
+  <rect x="250" y="50" width="150" height="100" rx="10" fill="#fff0e6" stroke="#ff8800" stroke-width="2"/>
+  <text x="325" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">
+    PHASE 2: REMOVE
+  </text>
+  <text x="325" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Unscrew cover plate
+  </text>
+  <text x="325" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Extract old gasket
+  </text>
+  <text x="325" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Clean overflow hole
+  </text>
+  <text x="325" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Inspect pipe condition
+  </text>
+
+  <!-- Arrow 2 -->
+  <line x1="400" y1="100" x2="440" y2="100" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Phase 3: Installation -->
+  <rect x="450" y="50" width="150" height="100" rx="10" fill="#e6ffe6" stroke="#44aa44" stroke-width="2"/>
+  <text x="525" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">
+    PHASE 3: INSTALL
+  </text>
+  <text x="525" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Position new gasket
+  </text>
+  <text x="525" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Align cover plate
+  </text>
+  <text x="525" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Tighten screws evenly
+  </text>
+  <text x="525" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Check seal integrity
+  </text>
+
+  <!-- Arrow 3 (downward) -->
+  <line x1="525" y1="150" x2="525" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Phase 4: Testing -->
+  <rect x="450" y="200" width="150" height="100" rx="10" fill="#e6f0ff" stroke="#4488cc" stroke-width="2"/>
+  <text x="525" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">
+    PHASE 4: TEST
+  </text>
+  <text x="525" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Fill past overflow level
+  </text>
+  <text x="525" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Check for leaks
+  </text>
+  <text x="525" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Verify proper drainage
+  </text>
+  <text x="525" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    • Monitor ceiling below
+  </text>
+
+  <!-- Key Steps Detail Box -->
+  <rect x="50" y="200" width="350" height="180" rx="10" fill="#f5f5f5" stroke="#666" stroke-width="2"/>
+  <text x="225" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">
+    Critical Steps & Tips
+  </text>
+
+  <!-- Step details -->
+  <circle cx="70" cy="250" r="8" fill="#ff4444"/>
+  <text x="85" y="255" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">
+    Proper Gasket Orientation
+  </text>
+  <text x="85" y="270" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Ensure gasket sits flush against tub wall, not twisted or pinched
+  </text>
+
+  <circle cx="70" cy="290" r="8" fill="#ff8800"/>
+  <text x="85" y="295" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">
+    Even Screw Tightening
+  </text>
+  <text x="85" y="310" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Tighten gradually in small increments to avoid warping the plate
+  </text>
+
+  <circle cx="70" cy="330" r="8" fill="#44aa44"/>
+  <text x="85" y="335" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">
+    Clean Installation Area
+  </text>
+  <text x="85" y="350" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Remove all old gasket material and soap residue before installation
+  </text>
+
+  <!-- Common Issues -->
+  <rect x="50" y="400" width="700" height="140" rx="10" fill="#fff8e1" stroke="#ffcc00" stroke-width="2"/>
+  <text x="400" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">
+    Common Issues & Solutions
+  </text>
+
+  <!-- Issue 1 -->
+  <text x="70" y="450" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">
+    Problem: Water Still Leaking After Replacement
+  </text>
+  <text x="70" y="465" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • Check gasket positioning • Verify screw tightness • Inspect for cracks in overflow pipe
+  </text>
+
+  <!-- Issue 2 -->
+  <text x="70" y="485" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">
+    Problem: Cover Plate Won't Fit Properly
+  </text>
+  <text x="70" y="500" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • Ensure gasket isn't too thick • Check for warped plate • Verify correct gasket size
+  </text>
+
+  <!-- Issue 3 -->
+  <text x="70" y="520" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">
+    Problem: Gasket Keeps Slipping During Installation
+  </text>
+  <text x="70" y="535" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • Dry area completely • Use small amount of plumber's grease • Hold gasket while installing plate
+  </text>
+
+  <!-- Tools & Materials -->
+  <rect x="50" y="560" width="700" height="80" rx="10" fill="#e8f5e8" stroke="#44aa44" stroke-width="2"/>
+  <text x="400" y="585" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">
+    Required Tools & Materials
+  </text>
+  <text x="70" y="605" font-family="Arial, sans-serif" font-size="11" fill="#333">
+    <tspan font-weight="bold">Tools:</tspan> Phillips screwdriver, utility knife, cleaning supplies, flashlight
+  </text>
+  <text x="70" y="620" font-family="Arial, sans-serif" font-size="11" fill="#333">
+    <tspan font-weight="bold">Materials:</tspan> New overflow gasket, replacement screws (if needed), plumber's grease (optional)
+  </text>
+
+  <!-- Success Validation -->
+  <rect x="50" y="660" width="700" height="30" rx="10" fill="#e6ffe6" stroke="#44aa44" stroke-width="2"/>
+  <text x="400" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">
+    Success: No water leakage when filled past overflow level, proper drainage function, secure cover plate
+  </text>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>
