@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteByteGo Inspired Prototype - Single Server Setup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- 1. CORE RESET & TYPOGRAPHY --- */
+        :root {
+            --bg-main: #FFFFFF;
+            --bg-sidebar: #F9FAFB;
+            --text-primary: #1F2937; /* Gray-800 */
+            --text-secondary: #6B7280; /* Gray-500 */
+            --accent-blue: #2563EB; /* Professional Blue-600 */
+            --sidebar-width: 280px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.7; /* Generous 'leading-relaxed' */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- 2. LAYOUT: DISTRACTION-FREE ARCHITECTURE --- */
+        .wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sticky Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid #E5E7EB;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            padding: 1.5rem;
+            box-sizing: border-box;
+        }
+
+        /* Flexible Content Well */
+        .content-well {
+            flex: 1;
+            padding: 3rem 2rem;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-w: 3xl; /* 768px - Max readability */
+            margin: 0 auto;
+        }
+
+        /* --- 3. UI/UX: TYPOGRAPHY, BUTTONS & DIAGRAMS --- */
+        h1, h2, h3 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 { font-size: 2.25rem; } /* Page Title */
+        h2 { font-size: 1.5rem; margin-top: 2rem; } /* Section Header */
+        h3 { font-size: 1.125rem; } /* Sidebar Header */
+
+        p { margin-bottom: 1.25rem; color: var(--text-primary); }
+
+        /* The 'Paywall/Preview' button */
+        .btn-accent {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem; /* Rounded-md */
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-accent:hover {
+            background-color: #1D4ED8; /* Hover-700 */
+        }
+
+        /* --- Diagram Aesthetics (Excalidraw placeholder) --- */
+        /* You will apply a custom class to images, e.g., 'diagram-asset' */
+        .diagram-asset {
+            max-width: 100%;
+            height: auto;
+            margin-top: 1rem;
+            margin-bottom: 0.25rem;
+            /* Placeholder styling to simulate hand-drawn effect */
+            border: 2px dashed #9CA3AF;
+            border-radius: 8px;
+            background-color: #f0f4f8;
+            padding: 1rem;
+        }
+
+        .figure-caption {
+            font-size: 0.875rem; /* Text-sm */
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        /* --- 4. DATA NAVIGATION SYSTEM --- */
+        .sidebar-header {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-item {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.5rem;
+            margin-left: -0.5rem;
+            display: block;
+            border-radius: 0.375rem;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: #E5E7EB; /* Gray-200 */
+        }
+
+        .nav-item.active {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        /* --- Progress bar --- */
+        .progress-bar {
+            height: 6px;
+            background-color: #E5E7EB;
+            border-radius: 3px;
+            margin-bottom: 1.5rem;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-blue);
+            width: 20%; /* Hardcoded 20% complete */
+            border-radius: 3px;
+        }
+
+        /* Footer minimal styling */
+        .footer-minimal {
+            margin-top: auto;
+            border-top: 1px solid #E5E7EB;
+            padding-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            System Design Interview
+            <span>0/31</span>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+
+        <h3>CHAPTER 1: Introduction</h3>
+        <a href="#intro" class="nav-item active">01. Single Server Setup</a>
+        <a href="#scaling" class="nav-item">02. Vert. vs Horiz. Scaling</a>
+        <a href="#data-tier" class="nav-item">03. The Data Tier</a>
+
+        <h3>CHAPTER 2: The Core Components</h3>
+        <a href="#load-balancing" class="nav-item">04. Load Balancer</a>
+        <a href="#caching" class="nav-item">05. Caching Strategies</a>
+
+        <div class="footer-minimal">
+            <a href="#" style="color:inherit">Newsletter</a> | <a href="#" style="color:inherit">Support</a>
+        </div>
+    </nav>
+
+    <main class="content-well">
+        <article class="container">
+            <header>
+                <h1>Introduction to Single-Server Setup</h1>
+            </header>
+
+            <p>
+                A journey of a thousand miles begins with a single step. When designing a complex system, it is crucial to start simple. Before we add redundancy, partitioning, or failover, we must understand the core flow of a system that serves a single user.
+            </p>
+
+            <p>
+                Imagine a basic client-server setup: everything is running on one server. The web app, the database, and the application logic are all co-located on a single machine.
+            </p>
+
+            <h2>The Single Server Setup</h2>
+            <img src="https://via.placeholder.com/800x400.png?text=Figure+1:+Simple+Client-Server+Diagram+(Sketch+vibe)" alt="A hand-drawn style diagram of a client accessing a single server." class="diagram-asset">
+            <p class="figure-caption">Figure 1: Single Server Diagram - A minimal visual flow. (Placeholder for Excalidraw-style asset)</p>
+
+            <p>
+                The flow is straightforward: Users access websites through domain names (e.g., mysite.com). When the request is sent, the Domain Name System (DNS) returns the IP address, and Hypertext Transfer Protocol (HTTP) requests are sent directly to your web server. The web server then returns an HTML page or JSON response.
+            </p>
+
+            <h2>Incremental Growth: Scaling the Data Tier</h2>
+            <p>
+                As your user base grows, this setup will quickly break. The first major bottleneck is often the database. It shares CPU, RAM, and disk I/O with the web application. When the database gets overloaded, your entire service slows down.
+            </p>
+
+            <p>
+                The logical first step in **incremental growth** is separating the data tier from the web application tier.
+            </p>
+
+            <img src="https://via.placeholder.com/800x400.png?text=Figure+2:+Separating+Web+and+Data+Tiers+(Sketch+vibe)" alt="Diagram showing a separate Web Server and Database Server." class="diagram-asset">
+            <p class="figure-caption">Figure 2: Separated Architecture Diagram - Improving performance by isolating components.</p>
+
+            <p>
+                By moving the database to its own server, we improve performance and allow them to be scaled independently. We have introduced our first layer of architectural sophistication.
+            </p>
+
+            <div style="margin-top: 3rem; text-align: center;">
+                <button class="btn-accent" onclick="alert('Congratulations! Lesson marked complete. Progress updated to 20%.')">
+                    Mark as Complete
+                </button>
+            </div>
+
+        </article>
+    </main>
+</div>
+
+</body>
+</html>
