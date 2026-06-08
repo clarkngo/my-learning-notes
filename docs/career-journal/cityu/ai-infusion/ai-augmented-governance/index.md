@@ -19,72 +19,117 @@ parent: AI Infusion
 
 ## Overview
 
-AI-Augmented Governance applies generative AI to automatically validate Software Quality Assurance Plans (SQAPs) against established standards, internal policies, and project-specific requirements. Instead of relying solely on manual peer review, an AI agent acts as an always-available governance layer that checks completeness, consistency, and compliance before human sign-off.
+AI-Augmented Governance applies multi-agent AI pipelines to automatically validate software quality and compliance artifacts—replacing slow, inconsistent manual review with an always-available autonomous governance layer. The pattern is illustrated concretely in **PE03: Self-Healing Incident Routing Engines**, where an orchestrator agent repairs a broken production service and a fully decoupled evaluator agent audits the result against ITIL Incident Management standards.
 
 ---
 
-## Problem Statement
+## The PE03 Architecture
 
-Traditional SQAP reviews are time-consuming, inconsistent across reviewers, and often delayed due to scheduling constraints. Critical omissions—missing test coverage criteria, undefined roles and responsibilities, or non-compliant metrics—can slip through until late in the project lifecycle, increasing remediation cost.
+PE03 builds a two-agent SRE triage pipeline around an immutable baseline script (`incident_router.py`) that simulates a real database outage. The pipeline demonstrates the core governance principle: **the agent that modifies code must remain completely isolated from the agent that validates it.**
 
----
-
-## AI Infusion Approach
-
-### 1. Automated Completeness Check
-
-Feed the SQAP draft to an AI model with a structured prompt that maps to IEEE 730 or your organization's SQAP template. The model flags any missing sections or underpopulated fields.
-
-**Example Prompt:**
-> "You are a QA governance auditor. Review the following SQAP draft against the IEEE 730-2014 standard checklist. List each required section, mark it as Present, Partial, or Missing, and explain what is incomplete."
-
-### 2. Policy Compliance Validation
-
-Pass internal quality policy documents alongside the SQAP. The AI cross-references the plan's defined processes against mandatory controls (e.g., mandatory code review gates, traceability requirements).
-
-**Example Prompt:**
-> "Given the attached quality policy and the SQAP below, identify any process described in the SQAP that conflicts with or fails to address a mandatory control in the policy."
-
-### 3. Risk-Aware Gap Analysis
-
-The AI identifies areas in the SQAP that lack risk mitigation steps for high-severity failure modes, surfacing "unknown unknowns" the author may not have considered.
-
-**Example Prompt:**
-> "Review this SQAP for a healthcare data processing system. Identify quality assurance gaps that could become high-severity risks given regulatory requirements such as HIPAA or FDA 21 CFR Part 11."
-
-### 4. Consistency and Traceability Check
-
-The AI verifies that test phases, roles, and deliverables defined in the SQAP are internally consistent and traceable to requirements documents or user stories listed in the plan.
+```
+incident_router.py  (immutable baseline — never touched)
+        │
+        ▼
+agent_debugger.py   (Orchestrator — triage & repair)
+        │  writes
+        ▼
+incident_router_healed.py  ──► incidents.json
+                           ──► triage_summary.md
+                           ──► debugging_report.md
+        │
+        ▼
+eval_debugger.py    (Evaluator / Governance Gate — independent audit)
+        │  writes
+        ▼
+eval_results.json   { "status": "APPROVED"|"REJECTED", "score": 100|0, ... }
+```
 
 ---
 
-## Workflow Integration
+## Agent Roles
 
-| Stage | Human Role | AI Role |
+### The Orchestrator Agent (`agent_debugger.py`)
+
+The orchestrator acts as an automated SRE triage worker. Its responsibilities:
+
+- **Immutable input:** Reads `incident_router.py` but never mutates it. All hotfixes happen in-memory or in a staging workspace.
+- **Traceback-driven triage:** Intercepts the `NotImplementedError` in the runtime stderr payload and injects a structured handler.
+- **Multi-pass convergence loop:** Runs up to 5 iterations, cleaning up cascading faults on each pass.
+- **Downstream artifact generation:** The injected code block produces two compliance files when executed:
+  - `incidents.json` — structured ITIL incident record with `severity`, `category`, `summary`, and `remediation` fields.
+  - `triage_summary.md` — incident log explicitly mapped to the **Data Engineering** infrastructure domain.
+- **Pipeline telemetry:** Saves `debugging_report.md` summarizing trapped exceptions and patch rules fired.
+- **Idempotent patches:** Modifications must not duplicate or stack across successive runs.
+
+### The Evaluator Agent (`eval_debugger.py`)
+
+The evaluator acts as an independent ITIL Compliance Officer. It performs a **hybrid structural-and-semantic validation**:
+
+1. **Compilation check:** Runs `incident_router_healed.py` and verifies it exits with code `0`.
+2. **ITIL functional audit:** Inspects `incidents.json` and `triage_summary.md` to confirm:
+   - Severity flagged as `CRITICAL`
+   - Category tagged as `Database`
+   - Domain assigned to **Data Engineering**
+3. **Telemetry validation:** Confirms `debugging_report.md` exists with standard audit headers.
+4. **Schema export:** Writes a final `eval_results.json` with `status`, `score`, and `raw_ai_critique`.
+
+---
+
+## ITIL Compliance Artifacts
+
+| File | Purpose | Key Fields |
 | --- | --- | --- |
-| **Draft** | Author writes SQAP | — |
-| **Pre-Review** | Author submits to AI | Runs completeness, compliance, and consistency checks; returns structured report |
-| **Revision** | Author addresses AI-flagged gaps | — |
-| **Peer Review** | Reviewer focuses on judgment calls | AI report included as a reference artifact |
-| **Approval** | Governance board signs off | AI audit trail attached to approval record |
+| `incidents.json` | Structured incident record | `severity`, `category`, `summary`, `remediation` |
+| `triage_summary.md` | Human-readable incident log | Domain: Data Engineering |
+| `debugging_report.md` | Orchestrator telemetry | Trapped exceptions, patch rules fired |
+| `eval_results.json` | Governance gate output | `status`, `score`, `raw_ai_critique` |
 
 ---
 
-## Benefits
+## Execution Pipeline
 
-- **Speed:** AI pre-review takes seconds, shortening overall review cycles.
-- **Consistency:** Every SQAP is evaluated against the same checklist regardless of reviewer.
-- **Audit Trail:** AI validation reports serve as documented evidence of governance due diligence.
-- **Skill Transfer:** Junior authors receive immediate, actionable feedback that builds SQAP writing competency over time.
+```bash
+# Clean previous execution traces
+rm -f eval_results.json debugging_report.md incident_router_healed.py incidents.json triage_summary.md
+
+# Step 1: Run the Self-Healing Telemetry Orchestrator Agent
+python agent_debugger.py
+
+# Step 2: Run the Independent ITIL Governance Gate
+python eval_debugger.py
+```
 
 ---
 
-## Limitations and Human Oversight
+## Verification Checklist
 
-AI validation is a first-pass filter, not a final decision. The model may miss context-specific nuances, misinterpret domain-specific terminology, or hallucinate compliance issues. Human reviewers retain authority for final approval and must critically evaluate AI-generated findings before acting on them.
+| Artifact | Expected State |
+| --- | --- |
+| `incident_router.py` | Completely pristine — unchanged from baseline |
+| `incident_router_healed.py` | Executes with zero exceptions, outputs compliance metrics |
+| `eval_results.json` | `"status": "APPROVED"`, `"score": 100` |
 
 ---
 
-## Implementation Note
+## Governance Principles Demonstrated
 
-Introduce this as a required **"AI Governance Check"** step in the SQAP workflow. Authors run the validation before submitting for peer review, attach the AI report as an appendix, and document which findings were addressed and which were intentionally deferred with justification.
+| Principle | Implementation in PE03 |
+| --- | --- |
+| **Immutability** | Baseline script is never modified; all changes go to a staging artifact |
+| **Separation of concerns** | Orchestrator and evaluator agents are fully decoupled |
+| **Idempotency** | Patches verified not to duplicate across re-runs |
+| **Audit trail** | Every run produces `debugging_report.md` and `eval_results.json` as evidence |
+| **Standards compliance** | Output validated against ITIL Incident Management schema |
+
+---
+
+## Broader Application to SQAP Validation
+
+The same two-agent pattern extends directly to Software Quality Assurance Plan (SQAP) governance:
+
+- An **orchestrator agent** ingests a SQAP draft and checks it against IEEE 730 or internal templates, flagging missing sections and policy gaps.
+- An **evaluator agent** independently audits the orchestrator's findings and produces a structured compliance report.
+- Human reviewers focus their attention on judgment calls, using the AI audit trail as documented evidence of governance due diligence.
+
+The key insight from PE03 is that **autonomous validation only works when the modifier and the auditor are architecturally separate**—ensuring no agent grades its own work.
