@@ -72,22 +72,30 @@ On the whiteboard, you cross-reference **Domain Problems** (from the aviation st
 
 Here is what a quick classroom matrix looks like on the board:
 
-|  | **Design / Creative Majors** *(Focus: Visuals, UI, Gamification)* | **Business / Management Majors** *(Focus: Cost, Logistics, Efficiency)* | **Humanities / Psychology** *(Focus: Human factors, Stress, Safety)* |
-| --- | --- | --- | --- |
-| **Aviation Tech: Crosswind Landings** | **"Crosswind Arcade"**<br>
-
-<br>A 2D visual landing simulator where you drag a slider to control wind velocity. | **"Diverted Flight Calculator"**<br>
-
-<br>Simulates the exact dollar cost an airline loses when a plane has to divert due to wind. | **"Pilot Stress Tracker"**<br>
-
-<br>An interface that simulates a pilot's heart rate climbing as wind speeds increase. |
-| **Aviation Tech: Weight & Balance** | **"Cargo Tetris"**<br>
-
-<br>A visual game where stacking heavy luggage too far back causes the plane graphic to tilt dangerously. | **"Fuel Burn Estimator"**<br>
-
-<br>A dashboard showing how adding 500 lbs of extra cargo drains fuel costs over a 3-hour flight. | **"Baggage Crew Burnout"**<br>
-
-<br>A slider-based tool showing how heavy cargo distributions delay gate turns and fatigue ground crews. |
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th><strong>Design / Creative Majors</strong> <em>(Focus: Visuals, UI, Gamification)</em></th>
+			<th><strong>Business / Management Majors</strong> <em>(Focus: Cost, Logistics, Efficiency)</em></th>
+			<th><strong>Humanities / Psychology</strong> <em>(Focus: Human factors, Stress, Safety)</em></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Aviation Tech: Crosswind Landings</th>
+			<td><strong>"Crosswind Arcade"</strong><br>A 2D visual landing simulator where you drag a slider to control wind velocity.</td>
+			<td><strong>"Diverted Flight Calculator"</strong><br>Simulates the exact dollar cost an airline loses when a plane has to divert due to wind.</td>
+			<td><strong>"Pilot Stress Tracker"</strong><br>An interface that simulates a pilot's heart rate climbing as wind speeds increase.</td>
+		</tr>
+		<tr>
+			<th>Aviation Tech: Weight &amp; Balance</th>
+			<td><strong>"Cargo Tetris"</strong><br>A visual game where stacking heavy luggage too far back causes the plane graphic to tilt dangerously.</td>
+			<td><strong>"Fuel Burn Estimator"</strong><br>A dashboard showing how adding 500 lbs of extra cargo drains fuel costs over a 3-hour flight.</td>
+			<td><strong>"Baggage Crew Burnout"</strong><br>A slider-based tool showing how heavy cargo distributions delay gate turns and fatigue ground crews.</td>
+		</tr>
+	</tbody>
+</table>
 
 ---
 
@@ -149,20 +157,47 @@ Students choose **one item from each row** and connect them like a chain to inst
 
 ### 🗺️ The Vibe Coding Morphological Matrix
 
-| Project Parameter (The Dimension) | Option 1 | Option 2 | Option 3 | Option 4 |
-| --- | --- | --- | --- | --- |
-| **1. Target User** | Commercial Pilot | Airport Gate Manager | Cargo/Logistics Loader | Flight School Student |
-| **2. Aviation Headache** | Weight & Balance Limits | Fuel Burn vs. Routing | Unexpected Crosswinds | Maintenance Checklist Prep |
-| **3. The App Core Logic** | 2D Simulation / Game | Real-time Dashboard | Step-by-Step Interactive Guide | Predictive "What-If" Calculator |
-| **4. Secondary Major Angle** | **Business:**<br>
-
-<br>Track dollar costs lost | **Design:**<br>
-
-<br>UI color alerts (Green/Red) | **Psychology:**<br>
-
-<br>Track human stress/fatigue | **Logistics:**<br>
-
-<br>Optimize turnaround time |
+<table>
+	<thead>
+		<tr>
+			<th>Project Parameter (The Dimension)</th>
+			<th>Option 1</th>
+			<th>Option 2</th>
+			<th>Option 3</th>
+			<th>Option 4</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>1. Target User</th>
+			<td>Commercial Pilot</td>
+			<td>Airport Gate Manager</td>
+			<td>Cargo/Logistics Loader</td>
+			<td>Flight School Student</td>
+		</tr>
+		<tr>
+			<th>2. Aviation Headache</th>
+			<td>Weight &amp; Balance Limits</td>
+			<td>Fuel Burn vs. Routing</td>
+			<td>Unexpected Crosswinds</td>
+			<td>Maintenance Checklist Prep</td>
+		</tr>
+		<tr>
+			<th>3. The App Core Logic</th>
+			<td>2D Simulation / Game</td>
+			<td>Real-time Dashboard</td>
+			<td>Step-by-Step Interactive Guide</td>
+			<td>Predictive "What-If" Calculator</td>
+		</tr>
+		<tr>
+			<th>4. Secondary Major Angle</th>
+			<td><strong>Business:</strong><br>Track dollar costs lost</td>
+			<td><strong>Design:</strong><br>UI color alerts (Green/Red)</td>
+			<td><strong>Psychology:</strong><br>Track human stress/fatigue</td>
+			<td><strong>Logistics:</strong><br>Optimize turnaround time</td>
+		</tr>
+	</tbody>
+</table>
 
 ---
 
