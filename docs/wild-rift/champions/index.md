@@ -24,6 +24,14 @@ parent: Wild Rift
 ## Caitlyn
 - Overextend and zoning: place traps to zone out your enemy and allow mage support pokes to land easier.
 
+## Lucian
+- When you crit triggers, trade more or all-in
+
+## Smolder
+- Last hit with 1st skill, hit champions with 2nd skills.
+- Prolonged fights allow you to stack with 1st and 2nd skills easily.
+- Narrow tight paths are great for hitting your skills and also flying over walls to escape.
+
 ## Vayne
 - Use ultimate to go invisible while tumbling
 
@@ -33,8 +41,6 @@ parent: Wild Rift
 # Support
 
 ## Nami
-
-Source: ahjuicy
 
 ### Common Mistakes Nami Players Make
 * **Playing too passively:** A major mistake, even in high Elo (Diamond/Masters), is not poking enough. Nami is designed to trade aggressively.
@@ -57,8 +63,6 @@ Source: ahjuicy
 * **Movement:** Focus on side-stepping. Unless you are in high Elo, most Nami players throw bubbles directly at you rather than predicting your movement.
 * **Champion Picks:** Hook champions are generally strong against her.
 * **Respect the Ultimate:** As an ADC, do not engage solo once she has her Ultimate. She will chain CC (crowd control), slow, and sustain her partner. Wait for your support to make the play (e.g., land a hook) before going all-in.
-
-Here is a Nami Gameplay Cheat Sheet, incorporating the specific advice from the chat logs along with standard Nami mechanics.
 
 ### 🌊 Nami Gameplay Cheat Sheet
 
