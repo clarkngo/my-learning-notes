@@ -22,7 +22,7 @@ Here is the classification guide connecting mental modes to specific champions, 
 
 ### 2. The Patient Investor (High Delayed Gratification)
 
-* **The Mental State:** Pure emotional decoupling. You are comfortable losing early map pressure or watching teammates lose isolated skirmishes because you are focused on hitting hardcoded item breakpoints ($2\text{--}3 \text{ items}$). High tolerance for social pressure (ping spam).
+* **The Mental State:** Pure emotional decoupling. You are comfortable losing early map pressure or watching teammates lose isolated skirmishes because you are focused on hitting hardcoded item breakpoints ($2\text{–}3 \text{ items}$). High tolerance for social pressure (ping spam).
 * **The Champions:**
 * *Jungle:* **Master Yi, Shyvana** (Hyper-efficient pathing and farm optimization).
 * *Mid/Duo:* **Kassadin, Twitch, Vladimir, Zeri** (Intentionally absorbing pressure early to unlock an unstoppable late-game win condition).
@@ -128,7 +128,7 @@ Here is the psychological matchup grid, followed by a breakdown of how to exploi
 
 ## The Mental Mode Matchup Grid
 
-| Attacking Mindset (Row) $\rightarrow$ | ...vs. **Aggressive Opportunist** | ...vs. **Patient Investor** | ...vs. **Calculated Analyst** | ...vs. **Calm Anchor** |
+| Attacking Mindset (Row) → | ...vs. **Aggressive Opportunist** | ...vs. **Patient Investor** | ...vs. **Calculated Analyst** | ...vs. **Calm Anchor** |
 | --- | --- | --- | --- | --- |
 | **Aggressive Opportunist** | *Volatile Skill Check* | **Strong** (Crushes scaling timeline) | **Soft Strong** (Disrupts clean setups) | **Weak** (Bounces off stone walls) |
 | **Patient Investor** | **Weak** (Gets snowballed on early) | *Farming Arms Race* | **Soft Weak** (Gets map-choked out) | **Strong** (Free scale, no kill threat) |
