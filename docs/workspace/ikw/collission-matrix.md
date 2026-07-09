@@ -1,3 +1,8 @@
+---
+title: Collision Matrix
+layout: default
+parent: IKW
+---
 
 When you have students who are not interested in coding, asking them to "think of an app idea" will result in blank stares, anxiety, or highly generic answers like "an app that tracks homework." They freeze because they don't know what is technically possible, and they don't see how their own majors connect to a piece of software.
 
