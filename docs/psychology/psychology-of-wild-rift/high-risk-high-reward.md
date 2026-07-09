@@ -1,3 +1,9 @@
+---
+title: High Risk High Reward
+layout: default
+parent: Psychology of Wild Rift
+---
+
 When you shift the lens to **high-risk, high-reward playstyles** in *Wild Rift*, the psychological landscape gets significantly more intense. Because the mobile map is smaller and the pace is breakneck, high-risk strategies don't just affect your gold count—they completely hijack your neurological state.
 
 Let’s break down the psychological anatomy of the three most distinct high-risk playstyles on the Rift.

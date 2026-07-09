@@ -1,3 +1,8 @@
+---
+title: Cognitive Playstyles
+layout: default
+parent: Psychology of Wild Rift
+---
 Matching your selection to your preferred **mental mode** or **cognitive playstyle** is the absolute best way to maximize consistency on the Rift. Instead of choosing a champion based solely on the tier list, choosing a champion that fits your natural psychological state prevents friction and mental fatigue.
 
 Here is the classification guide connecting mental modes to specific champions, followed by a tactical decision tree to help you choose before your next draft.
