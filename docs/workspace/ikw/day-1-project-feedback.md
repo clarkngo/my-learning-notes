@@ -55,6 +55,27 @@ Feedback breakdown for the Day 1 vibe-coded mini-projects. For each project: who
 * **Target Audience:** Gamers wanting a fast reflex test or simple stress buster.
 * **Must Do Well:** Latency & Click-Tracking Accuracy — high-frequency input handling needs to register every rapid click cleanly without lag, frame drops, or misclicks as the timer counts down.
 
+## 10. Recycling Sorting Mini Game
+
+* **Target Audience:** Casual gamers, students, or environmentally conscious users looking for a quick drag-and-drop sorting challenge.
+* **Must Do Well:** State & Timer Synchronization — drag-and-drop drops must register instantly and score correctly (+10/-5) in sync with an accurate, uninterrupted countdown timer.
+
+---
+
+## 🔍 Build Review: Recycling Sorting Mini Game
+
+Playtest notes on the actual build (screenshot review), checked against the **State & Timer Synchronization** requirement from item 10 above.
+
+**What's working:**
+* Score, countdown timer, and Restart are all visible in the header at once — the state the "must do well" requirement depends on is at least being tracked and surfaced together.
+* The scoring rule is stated up front ("+10 if correct, -5 if wrong"), so the player knows the stakes before playing.
+* General Waste as a catch-all last bin is a sensible design choice for items that don't cleanly fit the other four.
+
+**What needs attention:**
+* **No trash items are visible in the drop zone.** The whole game is "drag trash into the bin," but the play area is empty — either items aren't spawning, or they failed to render. This is the one thing to verify first, since it's the entire core loop.
+* **Plastic vs. Vinyl is confusing.** The Vinyl bin's icon (a pump/lotion bottle) reads visually as plastic, and "Vinyl" isn't a bin category most players will recognize from real-world recycling. Two bins that look like they hold the same material invites wrong-bin drags that aren't really the player's fault — worth relabeling (e.g., "Glass" or merging into "Plastic") or picking a more distinct icon.
+* **Can't verify the timer/score actually sync with drags** from a static screenshot — since there's nothing to drag yet, re-check that a countdown tick doesn't stall or skip while a drag is in progress, and that score updates land the instant a drop resolves (not on a delay).
+
 ---
 
 ## 📋 Summary Table
@@ -70,3 +91,4 @@ Feedback breakdown for the Day 1 vibe-coded mini-projects. For each project: who
 | 7 | Random Mock Investing | Beginners/students practicing trading risk-free | Portfolio & math logic accuracy |
 | 8 | Today's OOTD | College students, fashion-conscious individuals | Relevant recommendation logic |
 | 9 | Speed Clicker! | Gamers wanting a reflex test/stress buster | Latency & click-tracking accuracy |
+| 10 | Recycling Sorting Mini Game | Casual gamers, students, eco-conscious users | State & timer synchronization |
