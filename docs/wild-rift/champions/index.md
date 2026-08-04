@@ -13,6 +13,14 @@ parent: Wild Rift
 1. TOC
 {:toc}
 
+
+# Jungle
+## Pantheon
+- Jungle clear: use empowered 2nd skill to immediately get 3 stacks. 3rd skill cancel it immediately to stack and return to auto-attack
+- Preparing to fight: spam 1st until 5 stacks to gank with empowered 2nd skill.
+- Strategy: ganks available with level 2 (1st and 2nd skill). focus on ganks rather than clearing camps.
+
+
 # Mid Lane
 ## Ahri
 - Roamer: clear your wave, and roam.
