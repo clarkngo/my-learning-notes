@@ -282,3 +282,124 @@ PlayerStats.add_stat("SHADOW_AUDIT", 1)
   [Condition] If {SHADOW_AUDIT} >= 1
 
 ```
+
+
+-------------
+
+
+
+
+
+Build the **Stats System (Data & Mechanics)** first.
+
+In a narrative game like *Disco Elysium*, dialogue is directly tied to the underlying character data. If you write your dialogue first without a working stat framework, you will end up having to rewrite your Dialogic timelines later to match variable names, condition types, and data formats.
+
+---
+
+### Why Building Stats First Saves You Time
+
+```
+  ┌─────────────────────────┐
+  │ 1. PlayerStats Autoload │  <-- Define variables & leveling logic
+  └────────────┬────────────┘
+               │
+               ▼
+  ┌─────────────────────────┐
+  │ 2. Interactive Objects  │  <-- Test adding +1 stat points in 2D scene
+  └────────────┬────────────┘
+               │
+               ▼
+  ┌─────────────────────────┐
+  │ 3. Dialogic Timelines   │  <-- Read stats to gate choices smoothly!
+  └─────────────────────────┘
+
+```
+
+1. **Clear Variable Names:** You establish standard keys (`SHADOW_AUDIT`, `LEGACY_WHISPERER`, `ROI_RHETORIC`) in code first so Dialogic knows exactly what variables to check.
+2. **Instant Feedback Loop:** You can test clicking an object in Godot, watch your stat increment from `0` to `1` in the debug output, and *then* step into a conversation to watch a new dialogue choice unlock.
+3. **No Refactoring:** It prevents broken scripts where Dialogic tries to call a GDScript function or check a variable that doesn't exist yet.
+
+---
+
+### Step-by-Step Implementation Order
+
+#### Step 1: Create the `PlayerStats.gd` Autoload Script (5 Minutes)
+
+Create a clean GDScript singleton to store your stats and handle leveling/XP:
+
+```gdscript
+# PlayerStats.gd
+extends Node
+
+# Signal to notify UI/Dialogic when a stat increases
+signal stat_changed(stat_name: String, new_value: int)
+
+# Base stats starting at 0
+var stats: Dictionary = {
+	"LEGACY_WHISPERER": 0,
+	"SHADOW_AUDIT": 0,
+	"ROI_RHETORIC": 0,
+	"HUMAN_IN_THE_LOOP": 0,
+	"PROCUREMENT_ARMOR": 0,
+	"PROMPT_SYNTAX": 0
+}
+
+# Add stat points and synchronize with Dialogic variables
+func add_stat(stat_name: String, amount: int = 1) -> void:
+	if stats.has(stat_name):
+		stats[stat_name] += amount
+		
+		# Sync directly with Dialogic's internal variable storage
+		if Engine.has_singleton("Dialogic"):
+			Dialogic.VAR.set_variable(stat_name, stats[stat_name])
+			
+		stat_changed.emit(stat_name, stats[stat_name])
+		print_rich("[color=green]+%d %s! (Current Level: %d)[/color]" % [amount, stat_name, stats[stat_name]])
+
+func get_stat(stat_name: String) -> int:
+	return stats.get(stat_name, 0)
+
+```
+
+> **Godot Setup:** Go to **Project** $\rightarrow$ **Project Settings** $\rightarrow$ **Globals / Autoload** tab $\rightarrow$ Add `PlayerStats.gd` as an Autoload named `PlayerStats`.
+
+---
+
+#### Step 2: Create a Simple Interactive Object Script (5 Minutes)
+
+Attach this script to an `Area2D` or `Control` node representing an object in your world (e.g., the crashed server monitor or the paper shredder):
+
+```gdscript
+# WorldObject.gd
+extends Area2D
+
+@export var object_name: String = "Crashed Mainframe Terminal"
+@export var stat_to_award: String = "LEGACY_WHISPERER"
+@export var stat_amount: int = 1
+
+var has_been_inspected: bool = false
+
+func inspect() -> void:
+	if not has_been_inspected:
+		has_been_inspected = true
+		PlayerStats.add_stat(stat_to_award, stat_amount)
+		print("You inspected the " + object_name)
+
+```
+
+---
+
+#### Step 3: Write the Gated Dialogue in Dialogic (After Stats Work)
+
+Now that your variables and increment functions exist, open Dialogic and write your dialogue trees. Your choice conditions will cleanly check the live data:
+
+```text
+[Choice] "What software is this?"
+  # Basic question (Always visible)
+
+[Choice] [LEGACY WHISPERER Tier 1] "I saw the stack trace on the crashed terminal."
+  # Condition: If {LEGACY_WHISPERER} >= 1
+
+```
+
+---
